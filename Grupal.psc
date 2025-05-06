@@ -130,7 +130,6 @@ FinSubProceso
 // Ejercicio 4: Cálculo del IVA (12%)
 // Pedir un precio sin IVA y calcular el precio con IVA incluido del 15% con un descuento del 30%
 SubProceso Ejercicio_4
-	aqui pegan el desarrollo.
 FinSubProceso
 
 // Ejercicio 5: Comparación de precios entre dos productos
