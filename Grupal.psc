@@ -391,21 +391,65 @@ FinSubProceso
 // Ejercicio 23: Mostrar saludo personalizado
 // Ingresar nombre y mostrar saludo: ¡Hola, [nombre]!
 SubProceso Ejercicio_23
+//Definimos la variable como caracter//
+	Definir nombre Como Caracter
+	//Preguntamos al usuario su nombre//
+	Escribir "¿Cual es tu Nombre?"
+	Leer nombre
+	//Escribimos el mensaje personalizado//
+	Escribir "Hola como estas ", nombre
 FinSubProceso
 
 // Ejercicio 24: Detectar si el carácter ingresado es una vocal
 // Ingresar una letra. Verificar si es a, e, i, o, u.
 SubProceso Ejercicio_24
+        //Definimos la variable como caracter//
+	Definir letra Como Caracter
+	leer letra
+	//Para que el no ocurra ningun improvisto la varible la transformamos en minuscula//
+	letra = Minusculas(letra)
+	//Aplicamos la condicion para cada una//
+	Si letra = "a" o letra = "e" o letra = "i" o letra = "o" o letra = "u" Entonces
+		Escribir "Es una Vocal"
+	SiNo
+		Escribir "No es una Vocal"
+	Fin Si
 FinSubProceso
 
 // Ejercicio 25: Detectar si el carácter ingresado es una consonante
 // Ingresar una letra. Verificar si es una consonante (sin validaciones complejas).
 SubProceso Ejercicio_25
+	//Definimos la variable como caracter//
+	Definir letra Como Caracter
+	Escribir "Ingrese una letra "
+	leer letra
+	//la constante la convertimos en minuscula//
+	letra = Minusculas(letra)
+    //Aplicamos la condicion para cada constante//
+	Si letra <> "a" y letra  <> "e" y letra <> "i" y letra <> "o" y letra <> "u" Entonces
+		Escribir "Su letra es una constante"
+	SiNo
+		Escribir "Su letra no es una constante"
+	Fin Si
+	
 FinSubProceso
 
 // Ejercicio 26: Comparar si dos nombres ingresados son iguales
 // Pedir dos nombres y verificar si son iguales (texto exacto).
 SubProceso Ejercicio_26
+//Definimos las varibles como caracter//
+	Definir Nom1,Nom2 Como Caracter
+	//Preguntamos los nombres//
+	Escribir "Ingrese el primer nombre "
+	leer Nom1
+	Escribir "Ingrese el segundo nombre"
+	LEER Nom2
+	//Aplicamos la condicion//
+	Si Nom1 = Nom2 Entonces
+		Escribir "Los nombres son iguales"
+	SiNo
+	    Escribir "Los nombres no son iguales"
+	Fin Si
 FinSubProceso
 
 // Ejercicio 27: Verificar si una letra es mayúscula o minúscula
