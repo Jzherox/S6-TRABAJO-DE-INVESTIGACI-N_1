@@ -702,24 +702,162 @@ FinSubProceso
 // Ejercicio 27: Verificar si una letra es mayúscula o minúscula
 // Ingresar una letra. Comparar con su versión en mayúscula/minúscula.
 SubProceso Ejercicio_27
-	// ************ PEGAR AQUI ************
+	// Este programa solicita un carácter al usuario.
+		// Verifica si es una letra mayúscula o minúscula usando comparaciones de rango.
+		
+		// Declaración de variables
+		Definir letra Como Caracter
+		
+		// Valor inicial
+		letra <- ""
+		
+		// Entrada
+		Escribir "Ingrese un carácter:"
+		Leer letra
+		
+		// Verificación por rango de letras
+		Si letra >= "A" Y letra <= "Z" Entonces
+			Escribir "La letra es MAYÚSCULA."
+		Sino
+			Si letra >= "a" Y letra <= "z" Entonces
+				Escribir "La letra es minúscula."
+			Sino
+				Escribir "No es una letra (es un número o símbolo)."
+			FinSi
+		FinSi
 FinSubProceso
 
 // Ejercicio 28: Mostrar nombre completo del cliente
 // Pedir nombre y apellido por separado. Mostrar nombre completo.
 SubProceso Ejercicio_28
-	// ************ PEGAR AQUI ************
+	// Este programa solicita el nombre y apellido del cliente por separado.
+		// Luego, utiliza un subproceso para construir el nombre completo y mostrarlo.
+		
+		// Declaración de variables
+		Definir nombre, apellido Como Caracter
+		
+		// Valores iniciales
+		nombre <- ""
+		apellido <- ""
+		
+		// Entrada de datos
+		Escribir "Ingrese su nombre:"
+		Leer nombre
+		
+		Escribir "Ingrese su apellido:"
+		Leer apellido
+		
+		// Llamada al subproceso que muestra el nombre completo
+		MostrarNombreCompleto(nombre, apellido)
+		
+FinProceso
+
+
+// Subproceso que concatena y muestra el nombre completo
+SubProceso MostrarNombreCompleto(nombre, apellido)
+	
+    // Declaración de variable local
+    Definir nombreCompleto Como Caracter
+	
+    // Valores iniciales
+    nombreCompleto <- ""
+	
+    // Concatenar
+    nombreCompleto <- Concatenar(nombre, " ")
+    nombreCompleto <- Concatenar(nombreCompleto, apellido)
+	
+    // Mostrar resultado
+    Escribir "Nombre completo: ", nombreCompleto
+
+
 FinSubProceso
 
 // Ejercicio 29: Verificar si una palabra es corta o larga
 // Pedir una palabra. Si tiene más de 6 caracteres, decir "larga"; si no, "corta".FinSi
 SubProceso Ejercicio_29
-	// ************ PEGAR AQUI ************
+	// Este programa pide una palabra al usuario y verifica si es larga o corta.
+		// Se considera larga si tiene más de 6 caracteres.
+		// Utiliza una función para realizar la verificación.
+		
+		// Declaración de variables
+		Definir palabra Como Caracter    // Almacena la palabra ingresada
+		Definir esLarga Como Logico      // Resultado que devuelve la función
+		
+		// Valores iniciales
+		palabra <- ""
+		esLarga <- Falso
+		
+		Escribir "Ingrese una palabra:"
+		Leer palabra
+		
+		// Llamamos a la función para verificar si es larga
+		esLarga <- EsPalabraLarga(palabra)
+		
+		// Mostramos el resultado
+		Si esLarga Entonces
+			Escribir "La palabra es LARGA."
+		Sino
+			Escribir "La palabra es CORTA."
+		FinSi
+		
+FinProceso
+
+
+// Función que evalúa si la palabra es larga
+Funcion resultado <- EsPalabraLarga(pal)
+	
+    // Bosquejo:
+    // Esta función recibe una palabra y retorna Verdadero si tiene más de 6 caracteres, caso contrario Falso.
+	
+    // Declaración de variables locales
+    Definir resultado Como Logico         // Retorno de la función
+    Definir tamano Como Entero            // Almacena longitud de la palabra
+	
+    // Valores iniciales
+    resultado <- Falso
+    tamano <- 0
+	
+    // Calculamos el tamaño de la palabra
+    tamano <- Longitud(pal)
+	
+    // Verificamos si es mayor a 6
+    Si tamano > 6 Entonces
+        resultado <- Verdadero
+    Sino
+        resultado <- Falso
+    FinSi
+
 FinSubProceso
 
 // Ejercicio 30: Contadar los caracteres y convertir a mayúsculas cualquier frase (sin recorrer)
 // Pedir frase. Usar funciones de PseInt de cadenas para este ejercicio
 SubProceso Ejercicio_30
-	// ************ PEGAR AQUI ************
+
+// Este programa solicita una frase al usuario,
+		// luego cuenta cuántos caracteres tiene usando la función LongitudCadena(),
+		// y la convierte completamente a mayúsculas usando la función Mayusculas().
+		// No se recorre la frase con bucles, solo funciones de cadena.
+		
+		// Declaración de variables
+		Definir frase, fraseMayusculas Como Caracter
+		Definir cantidadCaracteres Como Entero
+		
+		// Valores iniciales
+		frase <- ""
+		fraseMayusculas <- ""
+		cantidadCaracteres <- 0
+		
+		// Entrada de datos
+		Escribir "Ingrese una frase:"
+		Leer frase
+		
+		// Usamos funciones de cadena
+		cantidadCaracteres <- Longitud(frase)
+		fraseMayusculas <- Mayusculas(frase)
+		
+		// Salida de resultados
+		Escribir "Cantidad de caracteres: ", cantidadCaracteres
+		Escribir "Frase en mayúsculas: ", fraseMayusculas
+			
 FinSubProceso
-HOLA XDXD
+
