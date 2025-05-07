@@ -721,4 +721,4 @@ FinSubProceso
 // Pedir frase. Usar funciones de PseInt de cadenas para este ejercicio
 SubProceso Ejercicio_30
 	// ************ PEGAR AQUI ************
-FinSubProceso
+FinSubProceso.
