@@ -101,28 +101,28 @@ FinSubProceso
 // Convertir entre kilogramos y libras. Mostrar el resultado.
 SubProceso Ejercicio_2
 	//ENTRADA
-	definir kilogramos , libras  Como real
-	definir metodo  como real
+	Definir kilogramos, libras  Como real
+	Definir metodo como real
 	kilogramos=0;libras=0
 	//PROCESO
-	Escribir " conversor de kilogramosa libras y viceversa"         //TENER SIEMPRE EN CUENTA LAS VARIABLES 
-	Escribir " Seleccione una opción "                              // TENER UN METODO  DE OPCIÓNES POR EJEMPLO "1" Y "2" 
-	Escribir "1"  " convertir kilogramosa libras"
-	escribir "2 " " Convertir Libras a kilogramos "
+	Escribir "conversor de kilogramos a libras y viceversa"         //TENER SIEMPRE EN CUENTA LAS VARIABLES 
+	Escribir "Seleccione una opción "                              // TENER UN METODO  DE OPCIÓNES POR EJEMPLO "1" Y "2" 
+	Escribir "1 convertir kilogramos a libras"
+	escribir "2 Convertir Libras a kilogramos "
 	leer metodo
 	//PRIORIZAR LAS FORMULAS INVESTIGARLAS ANTES DE INGRESARLAS
 	//SALIDA
 	si metodo=1
-		escribir " ingrese el peso en Kilogramos  "
+		escribir "ingrese el peso en Kilogramos  "
 		leer kilogramos                                                           //A LAS OPCIONES PONER VARIABLES Y DEPUES LA OPCION COMO ,
 		libras=(kilogramos*2.20462)                                               // ESTA EN EL CODIGO 
-		Escribir kilogramos " kilogramos son " , libras, "libras"                  //PRIORIZAR UNA BUENA SALIDA DEL CODIGO 
+		Escribir kilogramos " kilogramos son " , libras, " libras"                  //PRIORIZAR UNA BUENA SALIDA DEL CODIGO 
 	SiNo
 		si metodo=2 
 			Escribir " Ingrese el peso en libras "
 			leer libras
 			kilogramos=(libras/2.20462)
-			Escribir libras " libra son " , kilogramos " kilogramos "
+			Escribir libras " libra son " , kilogramos " kilogramos"
 		FinSi
 	FinSi
 FinSubProceso
@@ -156,21 +156,21 @@ FinSubProceso
 // Pedir un precio sin IVA y calcular el precio con IVA incluido del 15% con un descuento del 30%
 SubProceso Ejercicio_4
 	//ENTRADA
-	definir precio , iva , precio_iva,precio_descuento,precio_final ,precioconiva,preciocondescuento, descuento Como real
+	Definir precio , iva , precio_iva,precio_descuento,precio_final ,precioconiva,preciocondescuento, descuento Como real
 	precio=0 ; iva=0.15; descuento=0.30 ;precio_iva=0;precio_descuento=0;precio_final=0;precioconiva=0;preciocondescuento=0
 	//SIEMPRE PONER EL VALOR DE LAS VARIABALES PARA QUE SEA MAS ORDENADO EL CODIGO
 	//Proceso 
-	Escribir " Precio del Producto ";leer precio
+	Escribir "Precio del Producto ";leer precio
 	precio_descuento=(descuento*precio)
 	preciocondescuento=(precio-precio_descuento)                   //PONEMOS BIEN LAS FORMULAS ESO ES LO MAS IMPORTANTE PARA QUE SALGA PERFECTO EL CODIGO
 	precio_iva=(preciocondescuento*iva)
 	precio_final=(preciocondescuento+precio_iva)
 	//SALIDA
-	Escribir " Su precio del producto con el descuento es "  , preciocondescuento, " $ "
+	Escribir "Su precio del producto con el descuento es "  , preciocondescuento, " $"
 	
-	Escribir " valor del iva incluido es de " , precio_iva , " $ "
+	Escribir "Valor del iva incluido es de " , precio_iva , " $"
 	
-	Escribir " Precio final es de " , precio_final " $ "
+	Escribir "Precio final es de " , precio_final " $"
 FinSubProceso
 
 // Ejercicio 5: Comparación de precios entre dos productos
@@ -199,21 +199,19 @@ FinSubProceso
 // Pedir edad. Indicar si es niño (0-12), joven (13-17), adulto (18-64), adulto mayor (65+).
 SubProceso Ejercicio_6
 	//ENTRADA
-	definir edad  como entero
-	Escribir " Ingrese su edad " ; leer edad
+	Definir edad  como entero
+	Escribir "Ingrese su edad" ; leer edad
 	//PROCESO 
 	//EN ESTOS CASOS SE UTILIZA EL SI Y EL SINO PARA HACER EL CODIGO MAS LIGERO MAS RAPIDO
 	Si edad<=12 Entonces
-		Escribir " Usted es un niño tiene " , edad " años "
+		Escribir "Usted es un niño, tiene " , edad " años"
 	SINO 	si  edad<17 Entonces
-			Escribir " usted es un Joven  tiene " , edad " años"      //TAMBIEN SE UTILIZAN OPERADORES RACIONALES EN ESTOS CASOS
+			Escribir "Usted es un Joven, tiene " , edad " años"      //TAMBIEN SE UTILIZAN OPERADORES RACIONALES EN ESTOS CASOS
 			//SALIDAS
-			
 		SINO si  edad<=64 entonces 
-				Escribir " usted es un Adulto tiene " , edad " años "      // PARA SABER SI UN NUMERO ES MAYOR , MENOR O IGUAL
-				
+				Escribir "Usted es un Adulto, tiene " , edad " años"      // PARA SABER SI UN NUMERO ES MAYOR , MENOR O IGUAL
 				si edad>64
-					Escribir " Usted es un adulto mayor tiene " , edad " años " 
+					Escribir "Usted es un Adulto Mayor, tiene " , edad " años" 
 				FinSi
 			FinSi
 		FinSi
@@ -252,21 +250,20 @@ FinSubProceso
 // Pedir una puntuación del 1 al 10 e interpretar como "Malo", "Regular", "Bueno", "Excelente".
 SubProceso Ejercicio_8
 	//ENTRADA 
-	definir puntuacion Como Entero
+	Definir puntuacion Como Entero
 	puntuacion=0
 	//PROCESO Y SALIDA
 	Escribir " Escriba su puntuación del examen " ; leer puntuacion 
 	//NUEVAMENTE UTILIZAMOS EL (SI Y EL SINO PARA HACER ESTE CODIGO)
-	//ASEGURAR CERRAR TODOS LOS SI CON FINSI Y DEFINIR BIEN NUESTRA VARIABLE
+	//ASEGURAR CERRAR TODOS LOS SI CON FINSI Y Definir BIEN NUESTRA VARIABLE
 	si puntuacion<=4 Entonces
-		escribir " Su puntuacion es malo " 
+		escribir "Su puntuacion es malo " 
 	sino si puntuacion<=6 Entonces
-			escribir " Su puntuacion es regular " //UTILIZAMOS OPERADORES RACIONALES
+			escribir "Su puntuacion es regular " //UTILIZAMOS OPERADORES RACIONALES
 		sino si puntuacion <=8 Entonces
-				Escribir " su puntuacion es buena " 
+				Escribir "Su puntuacion es buena " 
 			sino si puntuacion>= 9 Entonces
-					
-					Escribir " usted tiene una Excelente puntuacion"
+					Escribir "Usted tiene una Excelente puntuacion"
 				FinSi
 			FinSi
 		FinSi
@@ -308,32 +305,32 @@ FinSubProceso
 // Pedir valor de la cuenta. Calcular propina del 10% o 15% según nivel de servicio.
 SubProceso Ejercicio_10
 	//ENTRADA
-	definir cuenta , precio_propi , precifinal , precio como entero
-	definir propina1 , propina2  , precio_propi2 , preciofinal2  Como Real
-	definir opcioon Como entero
+	Definir cuenta , precio_propi , precifinal , precio como entero
+	Definir propina1 , propina2  , precio_propi2 , preciofinal2  Como Real
+	Definir opcioon Como entero
 	cuenta=0 ; propina1=0.10 ;propina2=0.15 ;  precio_propi=0 ; precifinal =0; preciofinal2 =0; precio_propi2=0 ; opcioon=0
 	//PROCESO
 	//UTILIZAMOS BIEN LAS VARIABLES TENIENDO EN CUENTA COMO SE LLAMAN CADA UNA DE ELLAS 
-	Escribir " ingrese el total de la cuenta " 
+	Escribir "Ingrese el total de la cuenta " 
 	leer precio
-	Escribir " seleccione el nivel del servicio"
+	Escribir "Seleccione el nivel del servicio"
 	Escribir "1. servicio regular (10% de propina) "
-	Escribir "2 . Servivo excelente (15% de propina)"
+	Escribir "2. Servivo excelente (15% de propina)"
 	leer opcioon
 	si opcioon=1
 		precio_propi=(precio*propina1)                // PONER BIEN LAS FORMULAS SI NO SABEN COMO HACER INVESTIGEN RECUERDEN QUE SI NO SABE HACER.,
 		precifinal=(precio+precio_propi)              // NO PODRAN HACER EL CODIGO 
 		//SALIDA
 		//ESCRIBIR BIEN LAS SALIDAS DETALLADAMENTE 
-		Escribir " El valor de la cuenta es de " , precio
-		Escribir " El valor de la propina es de " , precio_propi
-		Escribir  " El total de la cuenta es de " , precifinal
+		Escribir "El valor de la cuenta es de " , precio
+		Escribir "El valor de la propina es de " , precio_propi
+		Escribir "El total de la cuenta es de " , precifinal
 	sino si opcioon=2
 			precio_propi2=(precio*propina2)
 			preciofinal2=(precio+precio_propi2)
-			Escribir " El valor de la cuenta es de " , precio
-			Escribir " El valor de la propina es de " , precio_propi2
-			Escribir " El total de la cuenta es de " , preciofinal2
+			Escribir "El valor de la cuenta es de " , precio
+			Escribir "El valor de la propina es de " , precio_propi2
+			Escribir "El total de la cuenta es de " , preciofinal2
 		FinSi
 	FinSi
 FinSubProceso
@@ -365,18 +362,18 @@ FinSubProceso
 // Pedir un número y clasificar su signo.
 SubProceso Ejercicio_12
 	//ENTRADA
-	definir numeroo , doble como entero
-	Escribir " Ingrese un numero " ; leer numeroo
+	Definir numeroo , doble como entero
+	Escribir "Ingrese un numero" ; leer numeroo
 	//PROCESO Y SALIDA PORQUE HACEMOS LAS DOS COSAS AL MISMO TIEMPO 
 	// ¡QUE ES EL ABS ? EL ABS SIRVE PARA PONER CUALQUIER NUMERO NEGATIVO A POSITIVO
 	si numeroo>0 entonces 
 		doble<-numeroo*2
-		Escribir " su numero es positivo  , su doble es " ,  doble  //APLICAMOS LAGORITMOS MATEMATICOS 
+		Escribir "Su numero es positivo, su doble es " ,  doble  //APLICAMOS LAGORITMOS MATEMATICOS 
 	sino si  numeroo < 0 Entonces                                   // CON SU FORMULA 
 			numeroo<-abs(numeroo)
-			escribir " su numero es negativo su numero positivo es " , numeroo
+			escribir "Su numero es negativo su numero positivo es " , numeroo
 		sino si numeroo=0
-				Escribir " su numero es neutral es igual a " numeroo .
+				Escribir "Su numero es neutral es igual a " numeroo .
 			FinSi
 		FinSi
 	FinSi
@@ -409,7 +406,7 @@ FinSubProceso
 // Ejercicio 14: Descuento por edad y monto
 // Aplicar descuento especial solo si el cliente es mayor de 60 y compra más de $50. Si no lo es aplica el iva del 15% con un descuento solo del 5%
 SubProceso Ejercicio_14
-	//ENTRADA , DEFINIR VARIABLES 
+	//ENTRADA , Definir VARIABLES 
 	Definir total  , edad como entero
 	Definir iva , descuento  , descuentoespecial , descuentototal Como Real
 	//PROCESO Y SALIDA 
@@ -421,11 +418,11 @@ SubProceso Ejercicio_14
 	si edad>=60 y total>50 Entonces                                  //APLICAMOS OPERACIONES RACIONALES
 		descuentoespecial=(total*descuento)                          //APLICAMOS FORMULAS MATEMATICAS 
 		descuento=(total-descuentoespecial)
-		Escribir " Usted si cumple cn la promocion"
-		Escribir " Usted tiene " edad , " años "
-		Escribir " Su descuento especial es de (0.25%)" , descuentoespecial
-		Escribir " su valor de la factura es de " , total
-		Escribir " su valor con descuento incluido es de " , descuento
+		Escribir "Usted si cumple cn la promocion"
+		Escribir "Usted tiene " edad , " años"
+		Escribir "Su descuento especial es de (0.25%)" , descuentoespecial
+		Escribir "Su valor de la factura es de " , total
+		Escribir "Su valor con descuento incluido es de " , descuento
 	sino 
 		si  edad<60 Entonces
 			descuento=(total*0.05)
@@ -433,10 +430,10 @@ SubProceso Ejercicio_14
 			iva=(total*iva)
 			ivatotal=(iva+total)
 			preciofinal=(ivatotal-descuentototal)
-			Escribir " Usted no cumple con la promoción "
-			Escribir " Su valor total es" , total
-			Escribir " Su iva es " , iva 
-			Escribir " TOTAL A PAGAR ES DE " , preciofinal
+			Escribir "Usted no cumple con la promoción "
+			Escribir "Su valor total es" , total
+			Escribir "Su iva es " , iva 
+			Escribir "TOTAL A PAGAR ES DE " , preciofinal
 		FinSi
 	FinSi
 FinSubProceso
@@ -467,7 +464,7 @@ SubProceso Ejercicio_15
 		Escribir "---- Total ----"
 		Escribir "x" B5 " de 5$"
 		Escribir "x" B10c " de 10$"
-		Escribir "mas... " monedas "$"
+		Escribir "residuo en monedas " monedas "$"
 		Escribir "------------------"
 		Escribir "del total de: " cambio "$"
 	FinSi
@@ -478,27 +475,28 @@ FinSubProceso
 SubProceso Ejercicio_16
 	//ENTRADA 
 	//CLASIFICAMOS VARIABLES
-	definir dia Como caracter
+	Definir dia Como caracter
 	dia=""  
 	//Proceso Y SALIDA
 	//UTILIZAMOS SI / SINO 
-	Escribir " Ingrese un numero" ; leer dia
+	Escribir "Ingrese un numero" ; leer dia
 	si dia="1" Entonces
 		//UTILIZAMOS CADA NUMERO CORRESPONDIENTE AL DIA EJEMPLO = 1= LUNES POR EL ORDEN QUE TIENE CADA DIA 
-		Escribir " Su dia es el dia lunes "
+		Escribir "Su dia es el dia lunes"
 	sino si dia="2"
-			Escribir " Su dia es el dia Martes"                            //TAMBIEN PODEMOS PONER LA FUNCION SEGUN QUE NOS EXPLICARON AYER EN CLASES
+			Escribir "Su dia es el dia Martes"                            //TAMBIEN PODEMOS PONER LA FUNCION SEGUN QUE NOS EXPLICARON AYER EN CLASES
 		sino si dia="3"
-				Escribir " Su dia es dia Miercoles " 
+				Escribir "Su dia es dia Miercoles" 
 			sino si dia="4"
-					Escribir " Su dia es el dia Jueves "
+					Escribir "Su dia es el dia Jueves"
 				sino si dia="5"
-						Escribir " Su dia es el dia Viernes " 
+						Escribir "Su dia es el dia Viernes" 
 					sino si dia="6"
-							Escribir " Su dia es el dia Sabado " 
+							Escribir "Su dia es el dia Sabado" 
 						sino si dia= "7"
-								Escribir " Su dia es el Domingo "
-							sino	SI dia= "8" 
+								Escribir "Su dia es el Domingo"
+							sino
+								SI dia= "8" 
 									Escribir  " ********** ERROR ************"
 								FinSi
 							FinSi
@@ -514,19 +512,19 @@ FinSubProceso
 // Pedir precio unitario y decir si es "económico", "regular" o "caro".
 SubProceso Ejercicio_17
 	// Definimos las variables que almacenaran los valores
-	Definir precio Como Real
+	Definir compra Como Real
 	// Inicializamos las variables numericas
-	precio = 0
+	compra = 0
 	// Indicamos el requirimiento de informacion al usuario
-	Escribir "Ingrese el precio de su producto:"; Leer precio // Actualizamos el valor de la variable "precio"
+	Escribir "Ingrese el precio de su producto:"; Leer compra // Actualizamos el valor de la variable "precio"
 	// Desarrollamos la logica del programa
-	Si precio < 20 Entonces // CASO VERDADERO
+	Si compra < 20 Entonces // CASO VERDADERO
 		Escribir "Tu compra de " compra "$ se clasifica como económico." // Mostramos al usuario el resultado
 	SiNo // CASO FALSO
-		Si precio > 100 Entonces // SUBCASO VERDADERO
+		Si compra > 100 Entonces // SUBCASO VERDADERO
 			Escribir "Tu compra de " compra "$ se clasifica como caro." // Mostramos al usuario el resultado
 		SiNo // SUBCASO FALSO
-			Si precio >= 20 y precio <= 100  Entonces // SUBCASO VERDADERO
+			Si compra >= 20 y precio <= 100  Entonces // SUBCASO VERDADERO
 				Escribir "Tu compra de " compra "$ se clasifica como regular." // Mostramos al usuario el resultado
 			FinSi
 		FinSi
@@ -537,14 +535,14 @@ FinSubProceso
 // Pedir un año. Indicar si es bisiesto usando regla condicional (mod 4 y mod 100, mod 400).
 SubProceso Ejercicio_18
 	//ENTRADA
-	definir año como entero 
+	Definir año como entero 
 	Definir biciesto como logico
 	año=0 
 	//PROCESO Y SALIDA 
-	Escribir " Ingrese un año " ; leer año                           //TENER EN CUENTA PONER BIEN EL MOD 
+	Escribir "Ingrese un año " ; leer año                           //TENER EN CUENTA PONER BIEN EL MOD 
 	si (año mod 4=0 y (año mod 100<>0 o año mod 400=0)) Entonces     //RECORDAR QUE SI MOD NO ESTA IGUALADO A NADA ENTONCES SIEMPRE SE
 		biciesto<- Verdadero                                          // IGUALA A 0 UN EJEMPLO ES (MOD 4) NO ESTA DIFINIDO ENTONCES SERIA 
-		Escribir año , " Su año es biciesto"                         //  MOD4=0 
+		Escribir año , "Su año es biciesto"                         //  MOD4=0 
 	sino 
 		biciesto<- Falso                                                // MUCHO CUIDADO CON Y SE DEFIERE MAS A <> LEER BIEN EL PROBLEAMA
 		si biciesto Entonces
@@ -703,161 +701,122 @@ FinSubProceso
 // Ingresar una letra. Comparar con su versión en mayúscula/minúscula.
 SubProceso Ejercicio_27
 	// Este programa solicita un carácter al usuario.
-		// Verifica si es una letra mayúscula o minúscula usando comparaciones de rango.
-		
-		// Declaración de variables
-		Definir letra Como Caracter
-		
-		// Valor inicial
-		letra <- ""
-		
-		// Entrada
-		Escribir "Ingrese un carácter:"
-		Leer letra
-		
-		// Verificación por rango de letras
-		Si letra >= "A" Y letra <= "Z" Entonces
-			Escribir "La letra es MAYÚSCULA."
+	// Verifica si es una letra mayúscula o minúscula usando comparaciones de rango.
+	// Declaración de variables
+	Definir letra Como Caracter
+	// Valor inicial
+	letra <- ""
+	// Entrada
+	Escribir "Ingrese un carácter:"
+	Leer letra
+	// Verificación por rango de letras
+	Si letra >= "A" Y letra <= "Z" Entonces
+		Escribir "La letra es MAYÚSCULA."
+	Sino
+		Si letra >= "a" Y letra <= "z" Entonces
+			Escribir "La letra es minúscula."
 		Sino
-			Si letra >= "a" Y letra <= "z" Entonces
-				Escribir "La letra es minúscula."
-			Sino
-				Escribir "No es una letra (es un número o símbolo)."
-			FinSi
+			Escribir "No es una letra (es un número o símbolo)."
 		FinSi
+	FinSi
 FinSubProceso
 
 // Ejercicio 28: Mostrar nombre completo del cliente
 // Pedir nombre y apellido por separado. Mostrar nombre completo.
 SubProceso Ejercicio_28
 	// Este programa solicita el nombre y apellido del cliente por separado.
-		// Luego, utiliza un subproceso para construir el nombre completo y mostrarlo.
-		
-		// Declaración de variables
-		Definir nombre, apellido Como Caracter
-		
-		// Valores iniciales
-		nombre <- ""
-		apellido <- ""
-		
-		// Entrada de datos
-		Escribir "Ingrese su nombre:"
-		Leer nombre
-		
-		Escribir "Ingrese su apellido:"
-		Leer apellido
-		
-		// Llamada al subproceso que muestra el nombre completo
-		MostrarNombreCompleto(nombre, apellido)
-		
-FinProceso
-
+	// Luego, utiliza un subproceso para construir el nombre completo y mostrarlo.
+	// Declaración de variables
+	Definir nombre, apellido Como Caracter
+	// Valores iniciales
+	nombre <- ""
+	apellido <- ""
+	// Entrada de datos
+	Escribir "Ingrese su nombre:"
+	Leer nombre
+	Escribir "Ingrese su apellido:"
+	Leer apellido
+	// Llamada al subproceso que muestra el nombre completo
+	MostrarNombreCompleto(nombre, apellido)
+FinSubProceso
 
 // Subproceso que concatena y muestra el nombre completo
 SubProceso MostrarNombreCompleto(nombre, apellido)
-	
     // Declaración de variable local
     Definir nombreCompleto Como Caracter
-	
     // Valores iniciales
     nombreCompleto <- ""
-	
     // Concatenar
     nombreCompleto <- Concatenar(nombre, " ")
     nombreCompleto <- Concatenar(nombreCompleto, apellido)
-	
     // Mostrar resultado
     Escribir "Nombre completo: ", nombreCompleto
-
-
 FinSubProceso
 
 // Ejercicio 29: Verificar si una palabra es corta o larga
 // Pedir una palabra. Si tiene más de 6 caracteres, decir "larga"; si no, "corta".FinSi
 SubProceso Ejercicio_29
 	// Este programa pide una palabra al usuario y verifica si es larga o corta.
-		// Se considera larga si tiene más de 6 caracteres.
-		// Utiliza una función para realizar la verificación.
-		
-		// Declaración de variables
-		Definir palabra Como Caracter    // Almacena la palabra ingresada
-		Definir esLarga Como Logico      // Resultado que devuelve la función
-		
-		// Valores iniciales
-		palabra <- ""
-		esLarga <- Falso
-		
-		Escribir "Ingrese una palabra:"
-		Leer palabra
-		
-		// Llamamos a la función para verificar si es larga
-		esLarga <- EsPalabraLarga(palabra)
-		
-		// Mostramos el resultado
-		Si esLarga Entonces
-			Escribir "La palabra es LARGA."
-		Sino
-			Escribir "La palabra es CORTA."
-		FinSi
-		
-FinProceso
-
+	// Se considera larga si tiene más de 6 caracteres.
+	// Utiliza una función para realizar la verificación.
+	// Declaración de variables
+	Definir palabra Como Caracter    // Almacena la palabra ingresada
+	Definir esLarga Como Logico      // Resultado que devuelve la función
+	// Valores iniciales
+	palabra <- ""
+	esLarga <- Falso
+	Escribir "Ingrese una palabra:"
+	Leer palabra
+	// Llamamos a la función para verificar si es larga
+	esLarga <- EsPalabraLarga(palabra)
+	// Mostramos el resultado
+	Si esLarga Entonces
+		Escribir "La palabra es LARGA."
+	Sino
+		Escribir "La palabra es CORTA."
+	FinSi
+FinSubProceso
 
 // Función que evalúa si la palabra es larga
 Funcion resultado <- EsPalabraLarga(pal)
-	
-    // Bosquejo:
     // Esta función recibe una palabra y retorna Verdadero si tiene más de 6 caracteres, caso contrario Falso.
-	
     // Declaración de variables locales
     Definir resultado Como Logico         // Retorno de la función
     Definir tamano Como Entero            // Almacena longitud de la palabra
-	
     // Valores iniciales
     resultado <- Falso
     tamano <- 0
-	
     // Calculamos el tamaño de la palabra
     tamano <- Longitud(pal)
-	
     // Verificamos si es mayor a 6
     Si tamano > 6 Entonces
         resultado <- Verdadero
     Sino
         resultado <- Falso
     FinSi
-
 FinSubProceso
 
 // Ejercicio 30: Contadar los caracteres y convertir a mayúsculas cualquier frase (sin recorrer)
 // Pedir frase. Usar funciones de PseInt de cadenas para este ejercicio
 SubProceso Ejercicio_30
-
-// Este programa solicita una frase al usuario,
-		// luego cuenta cuántos caracteres tiene usando la función LongitudCadena(),
-		// y la convierte completamente a mayúsculas usando la función Mayusculas().
-		// No se recorre la frase con bucles, solo funciones de cadena.
-		
-		// Declaración de variables
-		Definir frase, fraseMayusculas Como Caracter
-		Definir cantidadCaracteres Como Entero
-		
-		// Valores iniciales
-		frase <- ""
-		fraseMayusculas <- ""
-		cantidadCaracteres <- 0
-		
-		// Entrada de datos
-		Escribir "Ingrese una frase:"
-		Leer frase
-		
-		// Usamos funciones de cadena
-		cantidadCaracteres <- Longitud(frase)
-		fraseMayusculas <- Mayusculas(frase)
-		
-		// Salida de resultados
+	// Este programa solicita una frase al usuario,
+	// luego cuenta cuántos caracteres tiene usando la función LongitudCadena(),
+	// y la convierte completamente a mayúsculas usando la función Mayusculas().
+	// No se recorre la frase con bucles, solo funciones de cadena.
+	// Declaración de variables
+	Definir frase, fraseMayusculas Como Caracter
+	Definir cantidadCaracteres Como Entero
+	// Valores iniciales
+	frase <- ""
+	fraseMayusculas <- ""
+	cantidadCaracteres <- 0
+	// Entrada de datos
+	Escribir "Ingrese una frase:"
+	Leer frase
+	// Usamos funciones de cadena
+	cantidadCaracteres <- Longitud(frase)
+	fraseMayusculas <- Mayusculas(frase)
+	// Salida de resultados
 		Escribir "Cantidad de caracteres: ", cantidadCaracteres
 		Escribir "Frase en mayúsculas: ", fraseMayusculas
-			
 FinSubProceso
-
