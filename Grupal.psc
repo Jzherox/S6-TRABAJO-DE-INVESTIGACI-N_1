@@ -111,7 +111,6 @@ SubProceso Ejercicio_2
 	escribir "2 " " Convertir Libras a kilogramos "
 	leer metodo
 	//PRIORIZAR LAS FORMULAS INVESTIGARLAS ANTES DE INGRESARLAS
-	
 	//SALIDA
 	si metodo=1
 		escribir " ingrese el peso en Kilogramos  "
@@ -168,7 +167,9 @@ SubProceso Ejercicio_4
 	precio_final=(preciocondescuento+precio_iva)
 	//SALIDA
 	Escribir " Su precio del producto con el descuento es "  , preciocondescuento, " $ "
+	
 	Escribir " valor del iva incluido es de " , precio_iva , " $ "
+	
 	Escribir " Precio final es de " , precio_final " $ "
 FinSubProceso
 
@@ -207,8 +208,10 @@ SubProceso Ejercicio_6
 	SINO 	si  edad<17 Entonces
 			Escribir " usted es un Joven  tiene " , edad " años"      //TAMBIEN SE UTILIZAN OPERADORES RACIONALES EN ESTOS CASOS
 			//SALIDAS
+			
 		SINO si  edad<=64 entonces 
 				Escribir " usted es un Adulto tiene " , edad " años "      // PARA SABER SI UN NUMERO ES MAYOR , MENOR O IGUAL
+				
 				si edad>64
 					Escribir " Usted es un adulto mayor tiene " , edad " años " 
 				FinSi
@@ -258,11 +261,11 @@ SubProceso Ejercicio_8
 	si puntuacion<=4 Entonces
 		escribir " Su puntuacion es malo " 
 	sino si puntuacion<=6 Entonces
-			
 			escribir " Su puntuacion es regular " //UTILIZAMOS OPERADORES RACIONALES
 		sino si puntuacion <=8 Entonces
 				Escribir " su puntuacion es buena " 
 			sino si puntuacion>= 9 Entonces
+					
 					Escribir " usted tiene una Excelente puntuacion"
 				FinSi
 			FinSi
@@ -476,11 +479,9 @@ SubProceso Ejercicio_16
 	//ENTRADA 
 	//CLASIFICAMOS VARIABLES
 	definir dia Como caracter
-	
 	dia=""  
 	//Proceso Y SALIDA
 	//UTILIZAMOS SI / SINO 
-	
 	Escribir " Ingrese un numero" ; leer dia
 	si dia="1" Entonces
 		//UTILIZAMOS CADA NUMERO CORRESPONDIENTE AL DIA EJEMPLO = 1= LUNES POR EL ORDEN QUE TIENE CADA DIA 
@@ -502,9 +503,9 @@ SubProceso Ejercicio_16
 								FinSi
 							FinSi
 						FinSi
-					FinSi               //CERRAMOS CADA SI CON FINSI 
+					FinSi                                          //CERRAMOS CADA SI CON FINSI 
 				FinSi
-			FinSi
+			Finsi
 		FinSi
 	FinSi
 FinSubProceso
@@ -541,14 +542,12 @@ SubProceso Ejercicio_18
 	año=0 
 	//PROCESO Y SALIDA 
 	Escribir " Ingrese un año " ; leer año                           //TENER EN CUENTA PONER BIEN EL MOD 
-	
 	si (año mod 4=0 y (año mod 100<>0 o año mod 400=0)) Entonces     //RECORDAR QUE SI MOD NO ESTA IGUALADO A NADA ENTONCES SIEMPRE SE
 		biciesto<- Verdadero                                          // IGUALA A 0 UN EJEMPLO ES (MOD 4) NO ESTA DIFINIDO ENTONCES SERIA 
 		Escribir año , " Su año es biciesto"                         //  MOD4=0 
 	sino 
 		biciesto<- Falso                                                // MUCHO CUIDADO CON Y SE DEFIERE MAS A <> LEER BIEN EL PROBLEAMA
 		si biciesto Entonces
-			
 			Escribir año , "Su año es biciesto"                   //POR ULTIMO PONER SI ES VERDADERO O FALSO 
 		sino 
 		FinSi
@@ -584,8 +583,6 @@ SubProceso Ejercicio_20
 	SiNo
 		Escribir "El segundo numero NO es el triple del primero"
 	Fin Si
-FinAlgoritmo
-
 FinSubProceso
 
 // Ejercicio 21: Determinar riesgo por síntomas múltiples para el efecto tienes
@@ -595,7 +592,7 @@ FinSubProceso
 // Si los tres síntomas son "SI" muestre un mensaje "Alto riesgo: Derivar a emergencia"
 // caso contrario muestre "Riesgo bajo o medio"
 SubProceso Ejercicio_21
-		//declaramos variable 
+	//declaramos variable 
 	Definir fiebre, dificultadpararespirar, dolordepecho  Como cadena
 	// solicitamos los sintomas al usuario, tienes fiebre,tienes dificultad para respirar,tienes dolor de pecho?.
 	Escribir "¿Tienes fiebre?(si/no):";Leer fiebre 
@@ -606,11 +603,9 @@ SubProceso Ejercicio_21
 	// evaluamos las condiciones si son de alto riesgo 
 	Si fiebre = "SI" Y  dificultadpararespirar = "SI" Y  dolordepecho = "SI" Entonces
 		Escribir "Alto riesgo:Derivar a emergencia"
-		SiNo
-			Escribir "riesgo bajo o medio"
-		Fin Si
-			
-FinAlgoritmo
+	SiNo
+		Escribir "riesgo bajo o medio"
+	Fin Si
 FinSubProceso
 
 // Ejercicio 22. La tienda desea implementar una función básica en su sistema para identificar el estado de salud de los clientes que se toman la presión arterial en su tienda. Para ello, solicita un pequeño algoritmo que reciba la presión sistólica como entrada y muestre una clasificación médica básica según la siguiente tabla:
@@ -631,16 +626,13 @@ SubProceso Ejercicio_22
 	    si presion <= 120 Entonces
 			Escribir "presion normal"
 		SiNo
-			
-		Si presion <= 139 Entonces
-			Escribir "prehipertension"
-		SiNo
+			Si presion <= 139 Entonces
+				Escribir "prehipertension"
+			SiNo
 			    Escribir "hipertension"
 			Fin Si
 		FinSi
 	FinSi
-	
-FinAlgoritmo
 FinSubProceso
 
 // Ejercicio 23: Mostrar saludo personalizado
