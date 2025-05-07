@@ -100,7 +100,7 @@ FinSubProceso
 // Ejercicio 2: Conversor de kilogramos a libras y viceversa
 // Convertir entre kilogramos y libras. Mostrar el resultado.
 SubProceso Ejercicio_2
-        //ENTRADA
+	//ENTRADA
 	definir kilogramos , libras  Como real
 	definir metodo  como real
 	kilogramos=0;libras=0
@@ -124,7 +124,7 @@ SubProceso Ejercicio_2
 			kilogramos=(libras/2.20462)
 			Escribir libras " libra son " , kilogramos " kilogramos "
 		FinSi
-		FinSi
+	FinSi
 FinSubProceso
 
 // Ejercicio 3: Calculadora de descuentos
@@ -155,7 +155,7 @@ FinSubProceso
 // Ejercicio 4: Cálculo del IVA (12%)
 // Pedir un precio sin IVA y calcular el precio con IVA incluido del 15% con un descuento del 30%
 SubProceso Ejercicio_4
-//ENTRADA
+	//ENTRADA
 	definir precio , iva , precio_iva,precio_descuento,precio_final ,precioconiva,preciocondescuento, descuento Como real
 	precio=0 ; iva=0.15; descuento=0.30 ;precio_iva=0;precio_descuento=0;precio_final=0;precioconiva=0;preciocondescuento=0
 	//SIEMPRE PONER EL VALOR DE LAS VARIABALES PARA QUE SEA MAS ORDENADO EL CODIGO
@@ -198,26 +198,26 @@ FinSubProceso
 // Ejercicio 6: Clasificador de edad del cliente
 // Pedir edad. Indicar si es niño (0-12), joven (13-17), adulto (18-64), adulto mayor (65+).
 SubProceso Ejercicio_6
-//ENTRADA
+	//ENTRADA
 	definir edad  como entero
 	Escribir " Ingrese su edad " ; leer edad
 	//PROCESO 
 	//EN ESTOS CASOS SE UTILIZA EL SI Y EL SINO PARA HACER EL CODIGO MAS LIGERO MAS RAPIDO
 	Si edad<=12 Entonces
 		Escribir " Usted es un niño tiene " , edad " años "
-		SINO 	si  edad<17 Entonces
-				Escribir " usted es un Joven  tiene " , edad " años"      //TAMBIEN SE UTILIZAN OPERADORES RACIONALES EN ESTOS CASOS
-				 	//SALIDAS
+	SINO 	si  edad<17 Entonces
+			Escribir " usted es un Joven  tiene " , edad " años"      //TAMBIEN SE UTILIZAN OPERADORES RACIONALES EN ESTOS CASOS
+			//SALIDAS
 			
-			 SINO si  edad<=64 entonces 
+		SINO si  edad<=64 entonces 
 				Escribir " usted es un Adulto tiene " , edad " años "      // PARA SABER SI UN NUMERO ES MAYOR , MENOR O IGUAL
-			
-			si edad>64
+				
+				si edad>64
 					Escribir " Usted es un adulto mayor tiene " , edad " años " 
-					FinSi
-                                        FinSi
-		                        FinSi
-	                                FinSi
+				FinSi
+			FinSi
+		FinSi
+	FinSi
 FinSubProceso
 
 // Ejercicio 7: Identificador de número par o impar
@@ -267,11 +267,11 @@ SubProceso Ejercicio_8
 			sino si puntuacion>= 9 Entonces
 					
 					Escribir " usted tiene una Excelente puntuacion"
+				FinSi
 			FinSi
 		FinSi
 	FinSi
-	FinSi
-	FinSubProceso
+FinSubProceso
 
 // Ejercicio 9: Verificador de múltiplo de 3 o múltiplo de 9 o múltiplo de 12
 // Pedir un número.
@@ -307,13 +307,13 @@ FinSubProceso
 // Ejercicio 10: Calculadora de propina
 // Pedir valor de la cuenta. Calcular propina del 10% o 15% según nivel de servicio.
 SubProceso Ejercicio_10
-//ENTRADA
+	//ENTRADA
 	definir cuenta , precio_propi , precifinal , precio como entero
 	definir propina1 , propina2  , precio_propi2 , preciofinal2  Como Real
 	definir opcioon Como entero
 	cuenta=0 ; propina1=0.10 ;propina2=0.15 ;  precio_propi=0 ; precifinal =0; preciofinal2 =0; precio_propi2=0 ; opcioon=0
 	//PROCESO
-        //UTILIZAMOS BIEN LAS VARIABLES TENIENDO EN CUENTA COMO SE LLAMAN CADA UNA DE ELLAS 
+	//UTILIZAMOS BIEN LAS VARIABLES TENIENDO EN CUENTA COMO SE LLAMAN CADA UNA DE ELLAS 
 	Escribir " ingrese el total de la cuenta " 
 	leer precio
 	Escribir " seleccione el nivel del servicio"
@@ -328,15 +328,15 @@ SubProceso Ejercicio_10
 		Escribir " El valor de la cuenta es de " , precio
 		Escribir " El valor de la propina es de " , precio_propi
 		Escribir  " El total de la cuenta es de " , precifinal
-	         sino si opcioon=2
+	sino si opcioon=2
 			precio_propi2=(precio*propina2)
 			preciofinal2=(precio+precio_propi2)
 			Escribir " El valor de la cuenta es de " , precio
 			Escribir " El valor de la propina es de " , precio_propi2
 			Escribir " El total de la cuenta es de " , preciofinal2
-		        FinSi
-	                FinSi
-	FinSubProceso
+		FinSi
+	FinSi
+FinSubProceso
 
 // Ejercicio 11: Clasificador de monto de compra
 // Categorizar la compra: "baja" (<$10), "media" ($10-30), "alta" (>$30).
@@ -364,7 +364,7 @@ FinSubProceso
 // Ejercicio 12: Determinar si un número es positivo deberá presentar el doble del número, Si es negativo lo convierte a positivo y lo presenta. Si es cero presenta el número es neutro
 // Pedir un número y clasificar su signo.
 SubProceso Ejercicio_12
-//ENTRADA
+	//ENTRADA
 	definir numeroo , doble como entero
 	Escribir " Ingrese un numero " ; leer numeroo
 	//PROCESO Y SALIDA PORQUE HACEMOS LAS DOS COSAS AL MISMO TIEMPO 
@@ -377,10 +377,10 @@ SubProceso Ejercicio_12
 			escribir " su numero es negativo su numero positivo es " , numeroo
 		sino si numeroo=0
 				Escribir " su numero es neutral es igual a " numeroo .
+			FinSi
 		FinSi
-		FinSi
-                FinSi
-                FinSubProceso
+	FinSi
+FinSubProceso
 
 // Ejercicio 13: Verificador de acceso por edad y dinero
 // Permitir entrar a la tienda si tiene más de 18 años y al menos $1.
@@ -409,7 +409,7 @@ FinSubProceso
 // Ejercicio 14: Descuento por edad y monto
 // Aplicar descuento especial solo si el cliente es mayor de 60 y compra más de $50. Si no lo es aplica el iva del 15% con un descuento solo del 5%
 SubProceso Ejercicio_14
-//ENTRADA , DEFINIR VARIABLES 
+	//ENTRADA , DEFINIR VARIABLES 
 	Definir total  , edad como entero
 	Definir iva , descuento  , descuentoespecial , descuentototal Como Real
 	//PROCESO Y SALIDA 
@@ -439,7 +439,7 @@ SubProceso Ejercicio_14
 			Escribir " TOTAL A PAGAR ES DE " , preciofinal
 		FinSi
 	FinSi
-       FinSubProceso
+FinSubProceso
 
 // Ejercicio 15: Cálculo de cambio exacto con billetes de $10 y $5
 // Pedir valor del vuelto y mostrar cuántos billetes de $10 y $5 necesita.
@@ -481,33 +481,33 @@ SubProceso Ejercicio_16
 	definir dia Como caracter
 	dia=""  
 	//Proceso Y SALIDA
-//UTILIZAMOS SI / SINO 
+	//UTILIZAMOS SI / SINO 
 	Escribir " Ingrese un numero" ; leer dia
 	si dia="1" Entonces
-//UTILIZAMOS CADA NUMERO CORRESPONDIENTE AL DIA EJEMPLO = 1= LUNES POR EL ORDEN QUE TIENE CADA DIA 
+		//UTILIZAMOS CADA NUMERO CORRESPONDIENTE AL DIA EJEMPLO = 1= LUNES POR EL ORDEN QUE TIENE CADA DIA 
 		Escribir " Su dia es el dia lunes "
 	sino si dia="2"
-		Escribir " Su dia es el dia Martes"                            //TAMBIEN PODEMOS PONER LA FUNCION SEGUN QUE NOS EXPLICARON AYER EN CLASES
+			Escribir " Su dia es el dia Martes"                            //TAMBIEN PODEMOS PONER LA FUNCION SEGUN QUE NOS EXPLICARON AYER EN CLASES
 		sino si dia="3"
-		Escribir " Su dia es dia Miercoles " 
-		sino si dia="4"
-		Escribir " Su dia es el dia Jueves "
-		sino si dia="5"
-		Escribir " Su dia es el dia Viernes " 
-		sino si dia="6"
-		Escribir " Su dia es el dia Sabado " 
-		sino si dia= "7"
-		Escribir " Su dia es el Domingo "
-		sino	SI dia= "8" 
-		Escribir  " ********** ERROR ************"
+				Escribir " Su dia es dia Miercoles " 
+			sino si dia="4"
+					Escribir " Su dia es el dia Jueves "
+				sino si dia="5"
+						Escribir " Su dia es el dia Viernes " 
+					sino si dia="6"
+							Escribir " Su dia es el dia Sabado " 
+						sino si dia= "7"
+								Escribir " Su dia es el Domingo "
+							sino	SI dia= "8" 
+									Escribir  " ********** ERROR ************"
+								FinSi
+							FinSi
+						FinSi
+					FinSi                                          //CERRAMOS CADA SI CON FINSI 
+				FinSi
+			Finsi
 		FinSi
-	        FinSi
-	        FinSi
-		FinSi                                          //CERRAMOS CADA SI CON FINSI 
-	        FinSi
-                Finsi
-                FinSi
-                FinSi
+	FinSi
 FinSubProceso
 
 // Ejercicio 17: Clasificador de producto por precio unitario
@@ -536,23 +536,21 @@ FinSubProceso
 // Ejercicio 18: Determinador de bisiesto (año)
 // Pedir un año. Indicar si es bisiesto usando regla condicional (mod 4 y mod 100, mod 400).
 SubProceso Ejercicio_18
-//ENTRADA
+	//ENTRADA
 	definir año como entero 
 	Definir biciesto como logico
 	año=0 
 	//PROCESO Y SALIDA 
 	Escribir " Ingrese un año " ; leer año                           //TENER EN CUENTA PONER BIEN EL MOD 
-
 	si (año mod 4=0 y (año mod 100<>0 o año mod 400=0)) Entonces     //RECORDAR QUE SI MOD NO ESTA IGUALADO A NADA ENTONCES SIEMPRE SE
 		biciesto<- Verdadero                                          // IGUALA A 0 UN EJEMPLO ES (MOD 4) NO ESTA DIFINIDO ENTONCES SERIA 
 		Escribir año , " Su año es biciesto"                         //  MOD4=0 
 	sino 
 		biciesto<- Falso                                                // MUCHO CUIDADO CON Y SE DEFIERE MAS A <> LEER BIEN EL PROBLEAMA
 		si biciesto Entonces
-			
 			Escribir año , "Su año es biciesto"                   //POR ULTIMO PONER SI ES VERDADERO O FALSO 
-			sino 
-         FinSi
+		sino 
+		FinSi
 	FinSi
 FinSubProceso
 
@@ -574,6 +572,17 @@ FinSubProceso
 // Ejercicio 20: Verificador de triple de un número
 // Pedir dos números. Verificar si el segundo es el triple del primero.
 SubProceso Ejercicio_20
+	// definimos las variables para los numeros 
+	Definir num1,num2 Como Real
+	Escribir "ingresar el primer numero"; Leer num1
+	Escribir "ingresar el segundo numero"; Leer num2
+	// verificamos si el segundo numero es el triple del primero
+	// comparamos si num2 es igual a 3* num1
+	Si num2 = 3 * num1   Entonces
+		Escribir "El segundo numero es el triple del primero"
+	SiNo
+		Escribir "El segundo numero NO es el triple del primero"
+	Fin Si
 FinSubProceso
 
 // Ejercicio 21: Determinar riesgo por síntomas múltiples para el efecto tienes
@@ -583,6 +592,20 @@ FinSubProceso
 // Si los tres síntomas son "SI" muestre un mensaje "Alto riesgo: Derivar a emergencia"
 // caso contrario muestre "Riesgo bajo o medio"
 SubProceso Ejercicio_21
+	//declaramos variable 
+	Definir fiebre, dificultadpararespirar, dolordepecho  Como cadena
+	// solicitamos los sintomas al usuario, tienes fiebre,tienes dificultad para respirar,tienes dolor de pecho?.
+	Escribir "¿Tienes fiebre?(si/no):";Leer fiebre 
+	Escribir "¿tienes dificultad para respirar?(si/no):";Leer dificultadpararespirar
+	Escribir "¿Tienes dolor de pecho?(si/no):"; Leer dolordepecho
+	Definir contador Como entero
+	contador = 0
+	// evaluamos las condiciones si son de alto riesgo 
+	Si fiebre = "SI" Y  dificultadpararespirar = "SI" Y  dolordepecho = "SI" Entonces
+		Escribir "Alto riesgo:Derivar a emergencia"
+	SiNo
+		Escribir "riesgo bajo o medio"
+	Fin Si
 FinSubProceso
 
 // Ejercicio 22. La tienda desea implementar una función básica en su sistema para identificar el estado de salud de los clientes que se toman la presión arterial en su tienda. Para ello, solicita un pequeño algoritmo que reciba la presión sistólica como entrada y muestre una clasificación médica básica según la siguiente tabla:
@@ -592,44 +615,110 @@ FinSubProceso
 //		Entre 121 y 139 Prehipertensión
 //		140 o más Hipertensión
 SubProceso Ejercicio_22
+	// perdirle al usuario la presion sistolica 
+	Definir presion como real
+	// hay q comprar los valores ingresado con los rangos establecidos 
+	escribir "presion sitolica"; Leer presion
+	// evaluamos los valores 
+	Si presion < 90 Entonces
+		Escribir "presion baja" 
+	SiNo
+	    si presion <= 120 Entonces
+			Escribir "presion normal"
+		SiNo
+			Si presion <= 139 Entonces
+				Escribir "prehipertension"
+			SiNo
+			    Escribir "hipertension"
+			Fin Si
+		FinSi
+	FinSi
 FinSubProceso
 
 // Ejercicio 23: Mostrar saludo personalizado
 // Ingresar nombre y mostrar saludo: ¡Hola, [nombre]!
 SubProceso Ejercicio_23
+	//Definimos la variable como caracter//
+	Definir nombre Como Caracter
+	//Preguntamos al usuario su nombre//
+	Escribir "¿Cual es tu Nombre?"
+	Leer nombre
+	//Escribimos el mensaje personalizado//
+	Escribir "Hola como estas ", nombre
 FinSubProceso
 
 // Ejercicio 24: Detectar si el carácter ingresado es una vocal
 // Ingresar una letra. Verificar si es a, e, i, o, u.
 SubProceso Ejercicio_24
+	//Definimos la variable como caracter//
+	Definir letra Como Caracter
+	Escribir "Ingrese una letra"
+	leer letra
+	//Para que el no ocurra ningun improvisto la varible la transformamos en minuscula//
+	letra = Minusculas(letra)
+	//Aplicamos la condicion para cada una//
+	Si letra = "a" o letra = "e" o letra = "i" o letra = "o" o letra = "u" Entonces
+		Escribir "Es una Vocal"
+	SiNo
+		Escribir "No es una Vocal"
+	Fin Si
 FinSubProceso
 
 // Ejercicio 25: Detectar si el carácter ingresado es una consonante
 // Ingresar una letra. Verificar si es una consonante (sin validaciones complejas).
 SubProceso Ejercicio_25
+	//Definimos la variable como caracter//
+	Definir letra Como Caracter
+	Escribir "Ingrese una letra "
+	leer letra
+	//la constante la convertimos en minuscula//
+	letra = Minusculas(letra)
+	//Aplicamos la condicion para cada constante//
+	Si letra <> "a" y letra  <> "e" y letra <> "i" y letra <> "o" y letra <> "u" Entonces
+		Escribir "Su letra es una constante"
+	SiNo
+		Escribir "Su letra no es una constante"
+	Fin Si
 FinSubProceso
 
 // Ejercicio 26: Comparar si dos nombres ingresados son iguales
 // Pedir dos nombres y verificar si son iguales (texto exacto).
 SubProceso Ejercicio_26
+	//Definimos las varibles como caracter//
+	Definir Nom1,Nom2 Como Caracter
+	//Preguntamos los nombres//
+	Escribir "Ingrese el primer nombre "
+	leer Nom1
+	Escribir "Ingrese el segundo nombre"
+	LEER Nom2
+	//Aplicamos la condicion//
+	Si Nom1 = Nom2 Entonces
+		Escribir "Los nombres son iguales"
+	SiNo
+	    Escribir "Los nombres no son iguales"
+	Fin Si
 FinSubProceso
 
 // Ejercicio 27: Verificar si una letra es mayúscula o minúscula
 // Ingresar una letra. Comparar con su versión en mayúscula/minúscula.
 SubProceso Ejercicio_27
+	// ************ PEGAR AQUI ************
 FinSubProceso
 
 // Ejercicio 28: Mostrar nombre completo del cliente
 // Pedir nombre y apellido por separado. Mostrar nombre completo.
 SubProceso Ejercicio_28
+	// ************ PEGAR AQUI ************
 FinSubProceso
 
 // Ejercicio 29: Verificar si una palabra es corta o larga
 // Pedir una palabra. Si tiene más de 6 caracteres, decir "larga"; si no, "corta".FinSi
 SubProceso Ejercicio_29
+	// ************ PEGAR AQUI ************
 FinSubProceso
 
 // Ejercicio 30: Contadar los caracteres y convertir a mayúsculas cualquier frase (sin recorrer)
 // Pedir frase. Usar funciones de PseInt de cadenas para este ejercicio
 SubProceso Ejercicio_30
+	// ************ PEGAR AQUI ************
 FinSubProceso
