@@ -406,36 +406,41 @@ FinSubProceso
 // Ejercicio 14: Descuento por edad y monto
 // Aplicar descuento especial solo si el cliente es mayor de 60 y compra más de $50. Si no lo es aplica el iva del 15% con un descuento solo del 5%
 SubProceso Ejercicio_14
-	//ENTRADA , Definir VARIABLES 
-	Definir total  , edad como entero
-	Definir iva , descuento  , descuentoespecial , descuentototal Como Real
-	//PROCESO Y SALIDA 
-	//ESTAMOS APLICANDO EL SI /SINO
-	iva=0.15  ;descuento=0.05
-	escribir " Ingrese su edad " ; leer edad 
-	Escribir " ingrese el total de la factura " ; leer total
-	descuento=0.25
-	si edad>=60 y total>50 Entonces                                  //APLICAMOS OPERACIONES RACIONALES
-		descuentoespecial=(total*descuento)                          //APLICAMOS FORMULAS MATEMATICAS 
-		descuento=(total-descuentoespecial)
-		Escribir "Usted si cumple cn la promocion"
-		Escribir "Usted tiene " edad , " años"
-		Escribir "Su descuento especial es de (0.25%)" , descuentoespecial
-		Escribir "Su valor de la factura es de " , total
-		Escribir "Su valor con descuento incluido es de " , descuento
-	sino 
-		si  edad<60 Entonces
-			descuento=(total*0.05)
-			descuentototal=(total-descuento)                                // ESCRIBIMOS UNA BUENA SALIDA 
-			iva=(total*iva)
-			ivatotal=(iva+total)
-			preciofinal=(ivatotal-descuentototal)
-			Escribir "Usted no cumple con la promoción "
-			Escribir "Su valor total es" , total
-			Escribir "Su iva es " , iva 
-			Escribir "TOTAL A PAGAR ES DE " , preciofinal
-		FinSi
-	FinSi
+		//Definimos las variable como real ya que hay valores en decimales//
+	definir descuento,iva,descuento_especial,edad,compra,iva_calculado Como Real
+	//Asignamos valores a las variables//
+	edad =0 ;compra =0 
+	descuento=0.05;descuento_especial=0;iva=0.15
+	iva_calculado=0
+	//Preguntamos lo que no sabemos//
+	Escribir "INDIQUE SU EDAD"
+	leer edad
+	Escribir "INDIQUE EL VALOR DE LA COMPRA"
+	Leer compra
+	//Aplicamos la condicion para poder aplicar el descuento//
+	Si edad >= 60 y compra >= 50 Entonces
+		//Definimos los parametros si la condicion se cumple//
+		Escribir "Ingrese el Descuento Especial  "
+		leer descuento_especial
+		descuento_especial=descuento_especial/100
+		descuento_especial=compra*descuento_especial
+		compra=compra-descuento_especial
+		Escribir "Usted se a hecho acredor a un Descuento Especial"
+		Escribir "Descuento Especial = ",descuento_especial ," USD$"
+		Escribir "Total de la compra = ",compra ," USD$"
+	SiNo
+		//Definimos los parametros si la condicion no se cumple//
+		descuento=compra*descuento
+		compra=compra-descuento
+		iva_calculado=iva*compra
+		compra=iva_calculado+compra
+		//Despues de calcular todo, pasamos a escribir los mensaje que se van a mostrar//
+		Escribir "Usted no aplica para el Descuento Especial"
+		Escribir "Edad = ",edad
+		Escribir "Descuento 5% = ",descuento," USD$"
+		Escribir "Iva 15% = ",iva_calculado," USD$"
+		Escribir "Total a pagar = ",compra," USD$"
+	Fin Si
 FinSubProceso
 
 // Ejercicio 15: Cálculo de cambio exacto con billetes de $10 y $5
