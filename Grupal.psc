@@ -447,9 +447,10 @@ FinSubProceso
 // Pedir valor del vuelto y mostrar cuántos billetes de $10 y $5 necesita.
 SubProceso Ejercicio_15
 	// Definimos las variables que almacenaran los valores
-	Definir saldo, costo, cambio, cambiototal, b10, b5, monedas Como Real
+	Definir saldo, costo, cambio, cambiototal Como Real
+	Definir b10, b5, monedas Como Entero
 	// Inicializamos las variables numericas
-	saldo = 0; costo = 0; cambio = 0; cambiototal = 0; b10 = 0; b5 = 0; monedas = 0
+	saldo = 0; costo = 0; cambio = 0; cambiototal = 0; b10 = 0; b5 = 0
 	// Indicamos el requirimiento de informacion al usuario
 	Escribir "Saldo:"; Leer saldo // Actualizamos el valor de la variable "saldo"
 	Si saldo <= 0 Entonces // Verificamos si el Saldo es suficiente para una posible compra
@@ -463,7 +464,7 @@ SubProceso Ejercicio_15
 		SiNo // Caso contrario
 			cambio = saldo - costo // Calculamos y actualizamos el valor de la variable "cambio"
 			cambiototal = cambio // Calculamos y actualizamos el valor de la variable "cambiototal"
-			b10 = trunc(cambio/10) // Calculamos y actualizamos el valor de la variable "b10"
+			b10 = trunc(cambio/10) // Calculamos y actualizamos el valor de la variable "b10" y usamos trunc para eliminar la parte decimal y ayuda a obtener el número de billetes de 10 en enteros
 			Si b10 >= 1 Entonces // Verificamos si la cantidad de billestes es mayor o igual a 1
 				cambio = cambio - (b10 * 10) // Calculamos y actualizamos el valor de la variable "cambio"
 			FinSi
