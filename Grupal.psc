@@ -473,21 +473,20 @@ FinSubProceso
 // Ejercicio 16: Categorizador de día de la semana
 // Pedir número del 1 al 7 y mostrar qué día es. Validar entrada.
 SubProceso Ejercicio_16
-		definir numeroo como entero
-	Escribir " Ingrese un numero del 1 al 7 "
+	definir numeroo como entero
+	Escribir "Ingrese un numero del 1 al 7:"
 	leer numeroo
 	segun numeroo hacer
-			1:  Escribir " el dia es lunes " 
-			2 : escribir " el dia es martes " 
-			3: escribir "el dia es miercoles " 
-			4 : escribir " el dia es jueves " 
-			5: escribir " el dia es viernes " 
-			6: escribir " el dia es sabado " 
-			7: escribir " el dia es domingo "
-			De Otro Modo:
-				Escribir " numero invalido . Debe ser del 1 al 7 "	 	
+		1: Escribir "El dia es lunes"
+		2: Escribir "El dia es martes"
+		3: Escribir "El dia es miercoles"
+		4: Escribir "El dia es jueves"
+		5: Escribir "El dia es viernes"
+		6: Escribir "El dia es sabado"
+		7: Escribir "El dia es domingo"
+		De Otro Modo:
+			Escribir "Numero invalido, debe ser del 1 al 7 "	 	
 	FinSegun
-	
 FinSubProceso
 
 // Ejercicio 17: Clasificador de producto por precio unitario
@@ -522,15 +521,13 @@ SubProceso Ejercicio_18
 	año=0 
 	//PROCESO Y SALIDA 
 	Escribir " Ingrese un año " ; leer año                           //TENER EN CUENTA PONER BIEN EL MOD 
-
 	si (año mod 4=0 y (año mod 100<>0 o año mod 400=0)) Entonces     //RECORDAR QUE SI MOD NO ESTA IGUALADO A NADA ENTONCES SIEMPRE SE
 		biciesto<- Verdadero                                          // IGUALA A 0 UN EJEMPLO ES (MOD 4) NO ESTA DIFINIDO ENTONCES SERIA 
-		Escribir año , " Su año es biciesto"                         //  MOD4=0 
+		Escribir año , " , su año es biciesto"                         //  MOD4=0 
 	sino 
 		biciesto<- Falso                                                // MUCHO CUIDADO CON Y SE DEFIERE MAS A <> LEER BIEN EL PROBLEAMA
-		Escribir año , " Su año no es biciesto "                   //POR ULTIMO PONER SI ES VERDADERO O FALSO 
-		FinSi
-	
+		Escribir año , " , su año no es biciesto"                   //POR ULTIMO PONER SI ES VERDADERO O FALSO 
+	FinSi
 FinSubProceso
 
 // Ejercicio 19: Conversor de horas a minutos y segundos
