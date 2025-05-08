@@ -473,39 +473,21 @@ FinSubProceso
 // Ejercicio 16: Categorizador de día de la semana
 // Pedir número del 1 al 7 y mostrar qué día es. Validar entrada.
 SubProceso Ejercicio_16
-	//ENTRADA 
-	//CLASIFICAMOS VARIABLES
-	Definir dia Como caracter
-	dia=""  
-	//Proceso Y SALIDA
-	//UTILIZAMOS SI / SINO 
-	Escribir "Ingrese un numero" ; leer dia
-	si dia="1" Entonces
-		//UTILIZAMOS CADA NUMERO CORRESPONDIENTE AL DIA EJEMPLO = 1= LUNES POR EL ORDEN QUE TIENE CADA DIA 
-		Escribir "Su dia es el dia lunes"
-	sino si dia="2"
-			Escribir "Su dia es el dia Martes"                            //TAMBIEN PODEMOS PONER LA FUNCION SEGUN QUE NOS EXPLICARON AYER EN CLASES
-		sino si dia="3"
-				Escribir "Su dia es dia Miercoles" 
-			sino si dia="4"
-					Escribir "Su dia es el dia Jueves"
-				sino si dia="5"
-						Escribir "Su dia es el dia Viernes" 
-					sino si dia="6"
-							Escribir "Su dia es el dia Sabado" 
-						sino si dia= "7"
-								Escribir "Su dia es el Domingo"
-							sino
-								SI dia= "8" 
-									Escribir  " ********** ERROR ************"
-								FinSi
-							FinSi
-						FinSi
-					FinSi                                          //CERRAMOS CADA SI CON FINSI 
-				FinSi
-			Finsi
-		FinSi
-	FinSi
+		definir numeroo como entero
+	Escribir " Ingrese un numero del 1 al 7 "
+	leer numeroo
+	segun numeroo hacer
+			1:  Escribir " el dia es lunes " 
+			2 : escribir " el dia es martes " 
+			3: escribir "el dia es miercoles " 
+			4 : escribir " el dia es jueves " 
+			5: escribir " el dia es viernes " 
+			6: escribir " el dia es sabado " 
+			7: escribir " el dia es domingo "
+			De Otro Modo:
+				Escribir " numero invalido . Debe ser del 1 al 7 "	 	
+	FinSegun
+	
 FinSubProceso
 
 // Ejercicio 17: Clasificador de producto por precio unitario
@@ -535,21 +517,20 @@ FinSubProceso
 // Pedir un año. Indicar si es bisiesto usando regla condicional (mod 4 y mod 100, mod 400).
 SubProceso Ejercicio_18
 	//ENTRADA
-	Definir año como entero 
+	definir año como entero 
 	Definir biciesto como logico
 	año=0 
 	//PROCESO Y SALIDA 
-	Escribir "Ingrese un año " ; leer año                           //TENER EN CUENTA PONER BIEN EL MOD 
+	Escribir " Ingrese un año " ; leer año                           //TENER EN CUENTA PONER BIEN EL MOD 
+
 	si (año mod 4=0 y (año mod 100<>0 o año mod 400=0)) Entonces     //RECORDAR QUE SI MOD NO ESTA IGUALADO A NADA ENTONCES SIEMPRE SE
 		biciesto<- Verdadero                                          // IGUALA A 0 UN EJEMPLO ES (MOD 4) NO ESTA DIFINIDO ENTONCES SERIA 
-		Escribir año , "Su año es biciesto"                         //  MOD4=0 
+		Escribir año , " Su año es biciesto"                         //  MOD4=0 
 	sino 
 		biciesto<- Falso                                                // MUCHO CUIDADO CON Y SE DEFIERE MAS A <> LEER BIEN EL PROBLEAMA
-		si biciesto Entonces
-			Escribir año , "Su año es biciesto"                   //POR ULTIMO PONER SI ES VERDADERO O FALSO 
-		sino 
+		Escribir año , " Su año no es biciesto "                   //POR ULTIMO PONER SI ES VERDADERO O FALSO 
 		FinSi
-	FinSi
+	
 FinSubProceso
 
 // Ejercicio 19: Conversor de horas a minutos y segundos
