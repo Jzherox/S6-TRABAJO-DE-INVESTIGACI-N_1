@@ -6,7 +6,7 @@ Proceso MenuFunciones
 		Escribir "1. Calculadora de vuelto"
 		Escribir "2. Conversor de kilogramos a libras y viceversa"
 		Escribir "3. Calculadora de descuentos"
-		Escribir "4. Comparación de precios entre dos productos"
+		Escribir "4. Cálculo del IVA (15%)"
 		Escribir "5. Comparación de precios entre dos productos"
 		Escribir "6. Clasificador de edad del cliente"
 		Escribir "7. Identificador de número par o impar"
@@ -152,25 +152,25 @@ SubProceso Ejercicio_3
 	FinSi
 FinSubProceso
 
-// Ejercicio 4: Cálculo del IVA (12%)
+// Ejercicio 4: Cálculo del IVA (15%)
 // Pedir un precio sin IVA y calcular el precio con IVA incluido del 15% con un descuento del 30%
 SubProceso Ejercicio_4
-	//ENTRADA
-	Definir precio , iva , precio_iva,precio_descuento,precio_final ,precioconiva,preciocondescuento, descuento Como real
-	precio=0 ; iva=0.15; descuento=0.30 ;precio_iva=0;precio_descuento=0;precio_final=0;precioconiva=0;preciocondescuento=0
-	//SIEMPRE PONER EL VALOR DE LAS VARIABALES PARA QUE SEA MAS ORDENADO EL CODIGO
-	//Proceso 
-	Escribir "Precio del Producto ";leer precio
-	precio_descuento=(descuento*precio)
-	preciocondescuento=(precio-precio_descuento)                   //PONEMOS BIEN LAS FORMULAS ESO ES LO MAS IMPORTANTE PARA QUE SALGA PERFECTO EL CODIGO
-	precio_iva=(preciocondescuento*iva)
-	precio_final=(preciocondescuento+precio_iva)
-	//SALIDA
-	Escribir "Su precio del producto con el descuento es "  , preciocondescuento, " $"
-	
-	Escribir "Valor del iva incluido es de " , precio_iva , " $"
-	
-	Escribir "Precio final es de " , precio_final " $"
+	// DECLARACIÓN DE VARIABLES
+	Definir precio, iva, descuento, precioConDescuento, valorDescuento, valorIVA, precioFinal Como Real
+	// INICIALIZACIÓN DE VARIABLES
+	precio = 0; iva = 0.15; descuento = 0.30; precioConDescuento = 0; valorDescuento = 0; valorIVA = 0; precioFinal = 0
+	// ENTRADA
+	Escribir "Ingrese el precio del producto: "
+	Leer precio
+	// PROCESO: PONEMOS BIEN LAS FORMULAS ESO ES LO MAS IMPORTANTE PARA QUE SALGA PERFECTO EL CODIGO
+	valorDescuento <- precio * descuento
+	precioConDescuento <- precio - valorDescuento
+	valorIVA <- precioConDescuento * iva
+	precioFinal <- precioConDescuento + valorIVA
+	// SALIDA
+	Escribir "Precio con descuento: ", precioConDescuento, " $"
+	Escribir "Valor del IVA (15%): ", valorIVA, " $"
+	Escribir "Precio final a pagar: ", precioFinal, " $"
 FinSubProceso
 
 // Ejercicio 5: Comparación de precios entre dos productos
