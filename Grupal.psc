@@ -69,8 +69,8 @@ Proceso MenuFunciones
 			29:; Ejercicio_29()
 			30:; Ejercicio_30()
 			0:; Escribir "¡Hasta pronto!"
-		De Otro Modo:
-			Escribir "Opción no válida. Intente de nuevo."
+			De Otro Modo:
+				Escribir "Opción no válida. Intente de nuevo."
 		FinSegun
 		Escribir "Presione ENTER para continuar..."
 		Esperar Tecla
@@ -86,13 +86,13 @@ SubProceso Ejercicio_1
 	// Inicializamos las variables numericas
 	costo = 0; saldo = 0; vuelto = 0
 	// Indicamos el requirimiento de informacion al usuario
-	Escribir "ingresa el costo del producto:"; Leer costo // Actualizamos el valor de la varianle
-	Escribir "ingresa el saldo para cancelar"; Leer saldo // Actualizamos el valor de la varianle
+	Escribir "ingresa el costo del producto:"; Leer costo // Actualizamos el valor de la varianle "costo"
+	Escribir "ingresa el saldo para cancelar"; Leer saldo // Actualizamos el valor de la varianle "saldo"
 	// Desarrollamos la logica del programa
-	Si saldo > costo Entonces // CASO VERDADERO
+	Si saldo > costo Entonces // CASO VERDADERO: comprobamos que hay saldo suficiente para cubrir el costo
 		vuelto = saldo - costo // Calculamos el valor de la variable "vuelto"
 		Escribir "El vuelto a entregar es de: " vuelto "$." // Mostramos al usuario el resultado
-	SiNo // CASO FALSO
+	SiNo // CASO FALSO: si el saldo es menor que el costo
 		Escribir "Saldo insuficiente." // Indicamos el conflicto
 	FinSi
 FinSubProceso
@@ -137,16 +137,16 @@ SubProceso Ejercicio_3
 	// Indicamos el requirimiento de informacion al usuario
 	Escribir "Ingresa el valor de su compra:"; Leer compra // Actualizamos el valor de la variable "compra"
 	// Desarrollamos la logica del programa
-	Si compra >= 20 y compra <= 50 Entonces // CASO VERDADERO
+	Si compra >= 20 y compra <= 50 Entonces // CASO VERDADERO: comprobar si la compra cumple los parametro entre 20 a 50
 		descuento = compra * (5/100) // Calculamos el valor de la variable "descuento"
 		pagar = compra - descuento // Calculamos el valor de la variable "pagar"
 		Escribir "Tu compra aplica al 5% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // Mostramos al usuario el resultado
-	Sino // CASO FALSO
+	Sino // CASO FALSO: si no se cumplen los parametros anteriores y la compra es mayor a 50
 		Si compra > 50 Entonces // SUBCASO VERDADERO
 			descuento = compra * (10/100) // Calculamos el valor de la variable "descuento"
 			pagar = compra - descuento // Calculamos el valor de la variable "pagar"
 			Escribir "Tu compra aplica al 10% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // Mostramos al usuario el resultado
-		SiNo // SUBCASO FALSO
+		SiNo // SUBCASO FALSO: ninguno de los parametros anteriores se cumplieron
 			Escribir "Tu compra no aplica a ningun descuento, valor a pagar: " compra "$" // Mostramos al usuario el resultado
 		FinSi
 	FinSi
@@ -184,12 +184,12 @@ SubProceso Ejercicio_5
 	Escribir "Ingresa el primer precio:"; Leer precio_1 // Actualizamos el valor de la variable "precio_1"
 	Escribir "Ingresa el segundo precio:"; Leer precio_2 // Actualizamos el valor de la variable "precio_2"
 	// Desarrollamos la logica del programa
-	Si precio_1 = precio_2 Entonces // CASO VERDADERO
+	Si precio_1 = precio_2 Entonces // CASO VERDADERO: ambos precios ingresados son iguales
 		Escribir "El primer precio ingresado es igual que el segundo: " precio_1 "$ = " precio_2 "$." // Mostramos al usuario el resultado
-	SiNo // SUBCASO FALSO
-		Si precio_1 > precio_2 Entonces // SUBCASO VERDADERO
-			Escribir "El primer precio ingresado es mayor que el segundo: " precio_1 "$ > " precio_2 "$." // Mostramos al usuario el resultado"$."
-		SiNo // SUBCASO FALSO
+	SiNo // SUBCASO FALSO: los precios ingresados son diferentes
+		Si precio_1 > precio_2 Entonces // SUBCASO VERDADERO: el primer precio ingresado es mayor que el segundo
+			Escribir "El primer precio ingresado es mayor que el segundo: " precio_1 "$ > " precio_2 "$." // Mostramos al usuario el resultado
+		SiNo // SUBCASO FALSO: el primer precio es menor que el segundo
 			Escribir "El primer precio ingresado es menor que el segundo: " precio_1 "$ < " precio_2 "$." // Mostramos al usuario el resultado
 		FinSi
 	FinSi
@@ -233,15 +233,15 @@ SubProceso Ejercicio_7
 	paridad <- num % 2 == 0 // Actualizamos el valor de la variable "paridad"
 	// Desarrollamos la logica del programa - comprobar si es multiplo de 10
 	mymod <- (num/10) == (trunc(num/10)) // Actualizamos el valor de la variable "multipl0"
-	Escribir "El numero " num " es:"
-	Si paridad Entonces // CASO VERDADERO
+	Escribir "El numero " num " es:" // Mostramos un mensaje indicando que:
+	Si paridad Entonces // CASO VERDADERO: si la variable booleana es verdadera
 		Escribir "* par." // Mostramos al usuario el resultado
-	Sino // CASO FALSO
+	Sino // CASO FALSO: si la variable booleana es falsa
 		Escribir "* impar." // Mostramos al usuario el resultado
 	FinSi
-	Si paridad Entonces // CASO VERDADERO
+	Si mymod Entonces // CASO VERDADERO: si la variable booleana es verdadera
 		Escribir "* multiplo de 10." // Mostramos al usuario el resultado
-	SiNo // CASO FALSO
+	SiNo // CASO FALSO: si la variable booleana es falsa
 		Escribir "* no es multiplo de 10." // Mostramos al usuario el resultado
 	FinSi
 FinSubProceso
@@ -280,7 +280,7 @@ SubProceso Ejercicio_9
 	// Indicamos el requirimiento de informacion al usuario
 	Escribir "Ingresa un numero:"; Leer num // Actualizamos el valor de la variable "num"
 	// Desarrollamos la logica del programa
-	Escribir "El numero " num " es:"
+	Escribir "El numero " num " es:" // Mostramos un mensaje indicando que:
 	// Primera condicional - Comprobar si es multiplo de 3
 	Si num % 3 == 0 Entonces // CASO VERDADERO
 		Escribir "* multiplo de 3." // Mostramos al usuario el resultado
@@ -305,10 +305,10 @@ FinSubProceso
 // Pedir valor de la cuenta. Calcular propina del 10% o 15% según nivel de servicio.
 SubProceso Ejercicio_10
 	//ENTRADA
-	Definir cuenta , precio_propi , precifinal , precio como entero
-	Definir propina1 , propina2  , precio_propi2 , preciofinal2  Como Real
+	Definir cuenta, precio_propi, precifinal, precio como entero
+	Definir propina1, propina2, precio_propi2, preciofinal2  Como Real
 	Definir opcioon Como entero
-	cuenta=0 ; propina1=0.10 ;propina2=0.15 ;  precio_propi=0 ; precifinal =0; preciofinal2 =0; precio_propi2=0 ; opcioon=0
+	cuenta=0 ; propina1=0.10 ;propina2=0.15 ;  precio_propi=0 ; precifinal =0; preciofinal2 =0; precio_propi2=0; opcioon=0
 	//PROCESO
 	//UTILIZAMOS BIEN LAS VARIABLES TENIENDO EN CUENTA COMO SE LLAMAN CADA UNA DE ELLAS 
 	Escribir "Ingrese el total de la cuenta " 
@@ -362,18 +362,18 @@ FinSubProceso
 // Pedir un número y clasificar su signo.
 SubProceso Ejercicio_12
 	//ENTRADA
-	Definir numeroo , doble como entero
+	Definir numeroo, doble como entero
 	Escribir "Ingrese un numero" ; leer numeroo
 	//PROCESO Y SALIDA PORQUE HACEMOS LAS DOS COSAS AL MISMO TIEMPO 
 	// ¡QUE ES EL ABS ? EL ABS SIRVE PARA PONER CUALQUIER NUMERO NEGATIVO A POSITIVO
 	si numeroo>0 entonces 
-		doble<-numeroo*2
-		Escribir "Su numero es positivo, su doble es " ,  doble  //APLICAMOS LAGORITMOS MATEMATICOS 
+		doble <- numeroo*2
+		Escribir "Su numero es positivo, su doble es ", doble  //APLICAMOS LAGORITMOS MATEMATICOS 
 	sino si  numeroo < 0 Entonces                                   // CON SU FORMULA 
-			numeroo<-abs(numeroo)
-			escribir "Su numero es negativo su numero positivo es " , numeroo
+			numeroo <- abs(numeroo)
+			escribir "Su numero es negativo su numero positivo es ", numeroo
 		sino si numeroo=0
-				Escribir "Su numero es neutral es igual a " numeroo .
+				Escribir "Su numero es neutral es igual a " numeroo
 			FinSi
 		FinSi
 	FinSi
