@@ -75,7 +75,7 @@ Proceso MenuFunciones
 		Escribir "Presione ENTER para continuar..."
 		Esperar Tecla
 		Limpiar Pantalla
-	Hasta Que opcionMenu = 4
+	Hasta Que opcionMenu = 0
 FinProceso
 
 // Ejercicio 1: Calculadora de vuelto
