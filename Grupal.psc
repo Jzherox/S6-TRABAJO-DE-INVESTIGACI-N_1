@@ -2,9 +2,9 @@ Proceso MenuFunciones
     Definir opcionMenu Como Entero
     Repetir
         Escribir "======= MENÚ DE EJERCICIOS ======="
-		Escribir "(Ingresa el numero del ejercicio para seleccionar)"
+	Escribir "(Ingresa el numero del ejercicio para seleccionar)"
         Escribir "1. Calculadora de vuelto"
-		Escribir "2. Conversor de kilogramos a libras y viceversa"
+	Escribir "2. Conversor de kilogramos a libras y viceversa"
         Escribir "3. Calculadora de descuentos"
         Escribir "4. Comparación de precios entre dos productos"
 		Escribir "5. Comparación de precios entre dos productos"
@@ -446,32 +446,39 @@ FinSubProceso
 // Ejercicio 15: Cálculo de cambio exacto con billetes de $10 y $5
 // Pedir valor del vuelto y mostrar cuántos billetes de $10 y $5 necesita.
 SubProceso Ejercicio_15
-	Definir saldo, costo, cambio, monedas, B5, B10, B10c Como Real
-	saldo = 0; costo = 0; cambio = 0; monedas = 0; B5 = 0; B10 = 0; B10c = 0
-	Escribir "Ingresar tu saldo:"; leer saldo
-	Escribir "Ingresa el costo a cobrar:"; Leer costo
-	cambio = saldo - costo
-	B10 = cambio / 10
-	B10c = trunc(B10)
-	Si saldo < costo Entonces
-		Escribir "Saldo insuficiente."
-	SiNo
-		Si B10 = B10c Entonces
-			monedas = cambio - (B10c * 10)
-		SiNo
-			Si B10 < (B10c + 0.5)
-				monedas = cambio - (B10c * 10)
-			SiNo
-				B5 = 1
-				monedas = cambio - (B10c * 10) - (B5 * 5)
+	// Definimos las variables que almacenaran los valores
+	Definir saldo, costo, cambio, cambiototal, b10, b5, monedas Como Real
+	// Inicializamos las variables numericas
+	saldo = 0; costo = 0; cambio = 0; cambiototal = 0; b10 = 0; b5 = 0; monedas = 0
+	// Indicamos el requirimiento de informacion al usuario
+	Escribir "Saldo:"; Leer saldo // Actualizamos el valor de la variable "saldo"
+	Si saldo <= 0 Entonces // Verificamos si el Saldo es suficiente para una posible compra
+		// Indicamos el requirimiento de informacion al usuario
+		Escribir "Saldo insuficiente para cualquier compra." // Mostramos al usuario un conflicto
+	SiNo // Caso contrario
+		// Indicamos el requirimiento de informacion al usuario
+		Escribir "Costo:"; Leer costo // Actualizamos el valor de la variable "costo"
+		Si costo > saldo Entonces // Verificamos si el Saldo es suficiente para la compra
+			Escribir "Saldo insuficiente para la compra." // Mostramos al usuario un conflicto
+		SiNo // Caso contrario
+			cambio = saldo - costo // Calculamos y actualizamos el valor de la variable "cambio"
+			cambiototal = cambio // Calculamos y actualizamos el valor de la variable "cambiototal"
+			b10 = trunc(cambio/10) // Calculamos y actualizamos el valor de la variable "b10"
+			Si b10 >= 1 Entonces // Verificamos si la cantidad de billestes es mayor o igual a 1
+				cambio = cambio - (b10 * 10) // Calculamos y actualizamos el valor de la variable "cambio"
 			FinSi
+			Si cambio >= 5 Entonces // Verificamos si el cambio es mayor o igual a 5
+				b5 = 1  // Actualizamos el valor de la variable "b5"
+				cambio = cambio - (b5 * 5) // Calculamos y actualizamos el valor de la variable "cambio"
+			FinSi
+			// Mostramos al usuario los resultados
+			Escribir "******************"
+			Escribir "billetes de 10$: " b10
+			Escribir "billetes de 5$: " b5
+			Escribir "monedas: " cambio "$"
+			Escribir "******************"
+			Escribir "cambio total: " cambiototal "$"
 		FinSi
-		Escribir "---- Total ----"
-		Escribir "x" B5 " de 5$"
-		Escribir "x" B10c " de 10$"
-		Escribir "residuo en monedas " monedas "$"
-		Escribir "------------------"
-		Escribir "del total de: " cambio "$"
 	FinSi
 FinSubProceso
 
