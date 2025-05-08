@@ -1,12 +1,12 @@
 Proceso MenuFunciones
-    Definir opcionMenu Como Entero
-    Repetir
-        Escribir "======= MENÚ DE EJERCICIOS ======="
-	Escribir "(Ingresa el numero del ejercicio para seleccionar)"
-        Escribir "1. Calculadora de vuelto"
-	Escribir "2. Conversor de kilogramos a libras y viceversa"
-        Escribir "3. Calculadora de descuentos"
-        Escribir "4. Comparación de precios entre dos productos"
+	Definir opcionMenu Como Entero
+	Repetir
+		Escribir "======= MENÚ DE EJERCICIOS ======="
+		Escribir "(Ingresa el numero del ejercicio para seleccionar)"
+		Escribir "1. Calculadora de vuelto"
+		Escribir "2. Conversor de kilogramos a libras y viceversa"
+		Escribir "3. Calculadora de descuentos"
+		Escribir "4. Comparación de precios entre dos productos"
 		Escribir "5. Comparación de precios entre dos productos"
 		Escribir "6. Clasificador de edad del cliente"
 		Escribir "7. Identificador de número par o impar"
@@ -33,11 +33,11 @@ Proceso MenuFunciones
 		Escribir "28. Mostrar nombre completo del cliente"
 		Escribir "29. Verificar si una palabra es corta o larga"
 		Escribir "30. Contadar los caracteres y convertir a mayúsculas cualquier frase (sin recorrer)"
-        Escribir "0. Salir"
-        Escribir "Seleccione una opción:"
-        Leer opcionMenu
+		Escribir "0. Salir"
+		Escribir "Seleccione una opción:"
+		Leer opcionMenu
 		Limpiar Pantalla
-        Segun opcionMenu Hacer
+		Segun opcionMenu Hacer
 			1:; Ejercicio_1()
 			2:; Ejercicio_2()
 			3:; Ejercicio_3()
@@ -68,14 +68,14 @@ Proceso MenuFunciones
 			28:; Ejercicio_28()
 			29:; Ejercicio_29()
 			30:; Ejercicio_30()
-            0:; Escribir "¡Hasta pronto!"
-            De Otro Modo:
-                Escribir "Opción no válida. Intente de nuevo."
-        FinSegun
-        Escribir "Presione ENTER para continuar..."
-        Esperar Tecla
-        Limpiar Pantalla
-    Hasta Que opcionMenu = 4
+			0:; Escribir "¡Hasta pronto!"
+		De Otro Modo:
+			Escribir "Opción no válida. Intente de nuevo."
+		FinSegun
+		Escribir "Presione ENTER para continuar..."
+		Esperar Tecla
+		Limpiar Pantalla
+	Hasta Que opcionMenu = 4
 FinProceso
 
 // Ejercicio 1: Calculadora de vuelto
@@ -406,7 +406,7 @@ FinSubProceso
 // Ejercicio 14: Descuento por edad y monto
 // Aplicar descuento especial solo si el cliente es mayor de 60 y compra más de $50. Si no lo es aplica el iva del 15% con un descuento solo del 5%
 SubProceso Ejercicio_14
-		//Definimos las variable como real ya que hay valores en decimales//
+	//Definimos las variable como real ya que hay valores en decimales//
 	definir descuento,iva,descuento_especial,edad,compra,iva_calculado Como Real
 	//Asignamos valores a las variables//
 	edad =0 ;compra =0 
@@ -618,9 +618,9 @@ SubProceso Ejercicio_21
 			Sino
 				Escribir "Sin síntomas: No se detecta riesgo"
 			FinSi
-    FinSi
-FinSi
-
+		FinSi
+	FinSi
+	
 FinSubProceso
 
 // Ejercicio 22. La tienda desea implementar una función básica en su sistema para identificar el estado de salud de los clientes que se toman la presión arterial en su tienda. Para ello, solicita un pequeño algoritmo que reciba la presión sistólica como entrada y muestre una clasificación médica básica según la siguiente tabla:
