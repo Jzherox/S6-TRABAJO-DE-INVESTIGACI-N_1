@@ -107,7 +107,7 @@ SubProceso Ejercicio_2
 	//PROCESO
 	Escribir "conversor de kilogramos a libras y viceversa"         //TENER SIEMPRE EN CUENTA LAS VARIABLES 
 	Escribir "Seleccione una opción "                              // TENER UN METODO  DE OPCIÓNES POR EJEMPLO "1" Y "2" 
-	Escribir "1 convertir kilogramos a libras"
+	Escribir "1 convertir kilogramos a libras"   
 	escribir "2 Convertir Libras a kilogramos "
 	leer metodo
 	//PRIORIZAR LAS FORMULAS INVESTIGARLAS ANTES DE INGRESARLAS
@@ -198,24 +198,28 @@ FinSubProceso
 // Ejercicio 6: Clasificador de edad del cliente
 // Pedir edad. Indicar si es niño (0-12), joven (13-17), adulto (18-64), adulto mayor (65+).
 SubProceso Ejercicio_6
-	//ENTRADA
-	Definir edad  como entero
-	Escribir "Ingrese su edad" ; leer edad
+		//ENTRADA
+	definir edad  como entero
+	Escribir " Ingrese su edad " ; leer edad
+	
 	//PROCESO 
 	//EN ESTOS CASOS SE UTILIZA EL SI Y EL SINO PARA HACER EL CODIGO MAS LIGERO MAS RAPIDO
 	Si edad<=12 Entonces
-		Escribir "Usted es un niño, tiene " , edad " años"
-	SINO 	si  edad<17 Entonces
-			Escribir "Usted es un Joven, tiene " , edad " años"      //TAMBIEN SE UTILIZAN OPERADORES RACIONALES EN ESTOS CASOS
-			//SALIDAS
-		SINO si  edad<=64 entonces 
-				Escribir "Usted es un Adulto, tiene " , edad " años"      // PARA SABER SI UN NUMERO ES MAYOR , MENOR O IGUAL
-				si edad>64
-					Escribir "Usted es un Adulto Mayor, tiene " , edad " años" 
-				FinSi
-			FinSi
-		FinSi
-	FinSi
+		Escribir " Usted es un niño tiene " , edad " años "
+		SINO 	si  edad<17 Entonces
+				Escribir " usted es un Joven  tiene " , edad " años"      //TAMBIEN SE UTILIZAN OPERADORES RACIONALES EN ESTOS CASOS
+				 
+	//SALIDAS
+SINO
+si  edad<=64 entonces 
+Escribir " usted es un Adulto tiene " , edad " años "      // PARA SABER SI UN NUMERO ES MAYOR , MENOR O IGUAL
+sino 
+si edad>64 Entonces
+Escribir " Usted es un adulto mayor tiene " , edad " años " 
+FinSi
+  FinSi 
+ FinSi
+FinSi
 FinSubProceso
 
 // Ejercicio 7: Identificador de número par o impar
