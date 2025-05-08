@@ -573,20 +573,47 @@ FinSubProceso
 // Si los tres síntomas son "SI" muestre un mensaje "Alto riesgo: Derivar a emergencia"
 // caso contrario muestre "Riesgo bajo o medio"
 SubProceso Ejercicio_21
-	//declaramos variable 
-	Definir fiebre, dificultadpararespirar, dolordepecho  Como cadena
-	// solicitamos los sintomas al usuario, tienes fiebre,tienes dificultad para respirar,tienes dolor de pecho?.
-	Escribir "¿Tienes fiebre?(si/no):";Leer fiebre 
-	Escribir "¿tienes dificultad para respirar?(si/no):";Leer dificultadpararespirar
-	Escribir "¿Tienes dolor de pecho?(si/no):"; Leer dolordepecho
-	Definir contador Como entero
+	// Declaramos variables
+	Definir fiebre, dificultadpararespirar, dolordepecho Como Cadena
+	Definir contador Como Entero
+	// Inicializamos el contador
 	contador = 0
-	// evaluamos las condiciones si son de alto riesgo 
-	Si fiebre = "SI" Y  dificultadpararespirar = "SI" Y  dolordepecho = "SI" Entonces
-		Escribir "Alto riesgo:Derivar a emergencia"
-	SiNo
-		Escribir "riesgo bajo o medio"
-	Fin Si
+	// Solicitamos los síntomas al usuario
+	Escribir "¿Tienes fiebre? (si/no):"
+	Leer fiebre
+	Escribir "¿Tienes dificultad para respirar? (si/no):"
+	Leer dificultadpararespirar
+	Escribir "¿Tienes dolor de pecho? (si/no):"
+	Leer dolordepecho
+	// Convertimos las respuestas a minúsculas para evitar errores por mayúsculas
+	fiebre = Minusculas(fiebre)
+	dificultadpararespirar = Minusculas(dificultadpararespirar)
+	dolordepecho = Minusculas(dolordepecho)
+	// Contamos cuántos síntomas están presentes
+	Si fiebre = "si" Entonces
+		contador = contador + 1
+	FinSi
+	Si dificultadpararespirar = "si" Entonces
+		contador = contador + 1
+	FinSi
+	Si dolordepecho = "si" Entonces
+		contador = contador + 1
+	FinSi
+	// Evaluamos el nivel de riesgo según la cantidad de síntomas
+	Si contador = 3 Entonces
+		Escribir "Alto riesgo: Derivar a emergencia"
+	Sino
+		Si contador = 2 Entonces
+			Escribir "Riesgo medio: Vigilar síntomas y consultar médico"
+		Sino
+			Si contador = 1 Entonces
+				Escribir "Riesgo bajo o medio: Descanso y observación"
+			Sino
+				Escribir "Sin síntomas: No se detecta riesgo"
+			FinSi
+    FinSi
+FinSi
+
 FinSubProceso
 
 // Ejercicio 22. La tienda desea implementar una función básica en su sistema para identificar el estado de salud de los clientes que se toman la presión arterial en su tienda. Para ello, solicita un pequeño algoritmo que reciba la presión sistólica como entrada y muestre una clasificación médica básica según la siguiente tabla:
