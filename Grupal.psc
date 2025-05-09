@@ -198,28 +198,24 @@ FinSubProceso
 // Ejercicio 6: Clasificador de edad del cliente
 // Pedir edad. Indicar si es niño (0-12), joven (13-17), adulto (18-64), adulto mayor (65+).
 SubProceso Ejercicio_6
-		//ENTRADA
-	definir edad  como entero
-	Escribir " Ingrese su edad " ; leer edad
-	
-	//PROCESO 
-	//EN ESTOS CASOS SE UTILIZA EL SI Y EL SINO PARA HACER EL CODIGO MAS LIGERO MAS RAPIDO
-	Si edad<=12 Entonces
-		Escribir " Usted es un niño tiene " , edad " años "
-		SINO 	si  edad<17 Entonces
-				Escribir " usted es un Joven  tiene " , edad " años"      //TAMBIEN SE UTILIZAN OPERADORES RACIONALES EN ESTOS CASOS
-				 
-	//SALIDAS
-SINO
-si  edad<=64 entonces 
-Escribir " usted es un Adulto tiene " , edad " años "      // PARA SABER SI UN NUMERO ES MAYOR , MENOR O IGUAL
-sino 
-si edad>64 Entonces
-Escribir " Usted es un adulto mayor tiene " , edad " años " 
-FinSi
-  FinSi 
- FinSi
-FinSi
+	// ENTRADA
+	Definir edad Como Entero
+	Escribir "Ingrese su edad: "
+	Leer edad
+	// PROCESO Y SALIDA
+	Si edad <= 12 Entonces //EN ESTOS CASOS SE UTILIZA EL SI Y EL SINO PARA HACER EL CODIGO MAS LIGERO MAS RAPIDO
+		Escribir "Usted es un niño. Tiene ", edad, " años."
+	Sino
+		Si edad <= 16 Entonces
+			Escribir "Usted es un joven. Tiene ", edad, " años." //TAMBIEN SE UTILIZAN OPERADORES RACIONALES EN ESTOS CASOS
+		Sino
+			Si edad <= 64 Entonces  // PARA SABER SI UN NUMERO ES MENOR O IGUAL
+				Escribir "Usted es un adulto. Tiene ", edad, " años."
+			Sino
+				Escribir "Usted es un adulto mayor. Tiene ", edad, " años."
+			FinSi
+		FinSi
+	FinSi
 FinSubProceso
 
 // Ejercicio 7: Identificador de número par o impar
