@@ -149,8 +149,8 @@ SubProceso Ejercicio_3
 	// 4. Mostramos el resultado al usuario.
 	
 	// ENTRADA
-	Definir compra, descuento, pagar Como Real // Definimos las variables reales
-	compra = 0; descuento = 0; pagar = 0 // Inicializamos las variables numericas
+	Definir compra, descuento, pagar Como Real // Definimos las variables
+	compra = 0; descuento = 0; pagar = 0 // Inicializamos las variables
 	// Solicitamos datos al usuario
 	Escribir "Ingresa el valor de su compra:"; Leer compra
 	// PROCESO
@@ -160,8 +160,9 @@ SubProceso Ejercicio_3
 		Escribir "Tu compra aplica al 5% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // SALIDA
 	Sino // CASO: si no se cumplen los parametros anteriores
 		Si compra > 50 Entonces // SUBCASO VERDADERO: comprobar si la compra es mayor a 50
-			descuento = compra * (10/100) // Calculamos el valor de la variable "descuento"
-			pagar = compra - descuento // Calculamos el valor de la variable "pagar"
+			// Calculamos el valor de la variable "descuento" y "pagar"
+			descuento = compra * (10/100) 
+			pagar = compra - descuento
 			Escribir "Tu compra aplica al 10% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // SALIDA
 		SiNo // SUBCASO: ninguno de los parametros anteriores se cumplieron
 			Escribir "Tu compra no aplica a ningun descuento, valor a pagar: " compra "$" // SALIDA
@@ -172,14 +173,18 @@ FinSubProceso
 // Ejercicio 4: Cálculo del IVA (15%)
 // Pedir un precio sin IVA y calcular el precio con IVA incluido del 15% con un descuento del 30%
 SubProceso Ejercicio_4
-	// DECLARACIÓN DE VARIABLES
-	Definir precio, iva, descuento, precioConDescuento, valorDescuento, valorIVA, precioFinal Como Real
-	// INICIALIZACIÓN DE VARIABLES
-	precio = 0; iva = 0.15; descuento = 0.30; precioConDescuento = 0; valorDescuento = 0; valorIVA = 0; precioFinal = 0
+	// 1. La lógica del programa requiere multiples variables.
+	// 2. Pedimos al usuario los valores necesarios.
+	// 3. Calculamos los valores de las variables usando expresiones matematicas.
+	// 4. Mostramos el resultado al usuario.
+	
 	// ENTRADA
-	Escribir "Ingrese el precio del producto: "
-	Leer precio
-	// PROCESO: PONEMOS BIEN LAS FORMULAS ESO ES LO MAS IMPORTANTE PARA QUE SALGA PERFECTO EL CODIGO
+	Definir precio, iva, descuento, precioConDescuento, valorDescuento, valorIVA, precioFinal Como Real // DECLARACIÓN DE VARIABLES
+	precio = 0; precioConDescuento = 0; valorDescuento = 0; valorIVA = 0; precioFinal = 0 // INICIALIZACIÓN DE VARIABLES
+	iva = 0.15; descuento = 0.30 // OTORGAMOS VALORES YA CONOCIDOS
+	// Solicitamos datos al usuario
+	Escribir "Ingrese el precio del producto:"; Leer precio
+	// PROCESO: PONEMOS LAS FORMULAS PARA CALCULAR LOS VALORES DE LAS VARIABLES
 	valorDescuento <- precio * descuento
 	precioConDescuento <- precio - valorDescuento
 	valorIVA <- precioConDescuento * iva
@@ -193,20 +198,25 @@ FinSubProceso
 // Ejercicio 5: Comparación de precios entre dos productos
 // Pedir dos precios. Mostrar cuál es mayor, menor o si son iguales.
 SubProceso Ejercicio_5
+	// 1. La lógica del programa requiere 2 variables: precio_1 y precio_2.
+	// 2. Pedimos al usuario los valores necesarios.
+	// 3. Comparamos los valores de las variables para obtener un resultado.
+	// 4. Mostramos el resultado al usuario.
+	
 	// ENTRADA
 	Definir precio_1, precio_2 Como Real // Definimos las variables
-	precio_1 = 0; precio_2 = 0 // Inicializamos las variables numericas
-	// PROCESO: indicamos el requirimiento de informacion al usuario
-	Escribir "Ingresa el primer precio:"; Leer precio_1 // Actualizamos la variable "precio_1"
-	Escribir "Ingresa el segundo precio:"; Leer precio_2 // Actualizamos la variable "precio_2"
-	// Desarrollamos la logica del programa
-	Si precio_1 = precio_2 Entonces // CASO VERDADERO: ambos precios ingresados son iguales
-		Escribir "El primer precio ingresado es igual que el segundo: " precio_1 "$ = " precio_2 "$." // SALIDA: Mostramos un mensaje
+	precio_1 = 0; precio_2 = 0 // Inicializamos las variables
+	// Solicitamos datos al usuario
+	Escribir "Ingresa el primer precio:"; Leer precio_1
+	Escribir "Ingresa el segundo precio:"; Leer precio_2
+	// PROCESO
+	Si precio_1 = precio_2 Entonces // CASO: ambos precios ingresados son iguales
+		Escribir "El primer precio ingresado es igual que el segundo: " precio_1 "$ = " precio_2 "$." // SALIDA
 	SiNo // CASO FALSO: los precios ingresados son diferentes
-		Si precio_1 > precio_2 Entonces // SUBCASO VERDADERO: el primer precio ingresado es mayor que el segundo
-			Escribir "El primer precio ingresado es mayor que el segundo: " precio_1 "$ > " precio_2 "$." // SALIDA: Mostramos un mensaje
-		SiNo // SUBCASO FALSO: el primer precio es menor que el segundo
-			Escribir "El primer precio ingresado es menor que el segundo: " precio_1 "$ < " precio_2 "$." // SALIDA: Mostramos un mensaje
+		Si precio_1 > precio_2 Entonces // SUBCASO: el primer precio ingresado es mayor que el segundo
+			Escribir "El primer precio ingresado es mayor que el segundo: " precio_1 "$ > " precio_2 "$." // SALIDA
+		SiNo // SUBCASO: el primer precio es menor que el segundo
+			Escribir "El primer precio ingresado es menor que el segundo: " precio_1 "$ < " precio_2 "$." // SALIDA
 		FinSi
 	FinSi
 FinSubProceso
