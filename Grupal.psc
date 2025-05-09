@@ -1,7 +1,14 @@
+// EJERCICIOS REALIZADOS POR:
+// impares del 1 al 17 por Jose
+// pares del 2 al 18 por Steven
+// del 19 al 22 por Henrry
+// del 23 al 26 por Alexander
+// del 27 al 30 por Jeremy
+
 Proceso MenuFunciones
 	Definir opcionMenu Como Entero
 	Repetir
-		Escribir "======= MENÚ DE EJERCICIOS ======="
+		Escribir "============== MENÚ DE EJERCICIOS =============="
 		Escribir "(Ingresa el numero del ejercicio para seleccionar)"
 		Escribir "1. Calculadora de vuelto"
 		Escribir "2. Conversor de kilogramos a libras y viceversa"
@@ -33,6 +40,7 @@ Proceso MenuFunciones
 		Escribir "28. Mostrar nombre completo del cliente"
 		Escribir "29. Verificar si una palabra es corta o larga"
 		Escribir "30. Contadar los caracteres y convertir a mayúsculas cualquier frase (sin recorrer)"
+		Escribir "============================================================"
 		Escribir "0. Salir"
 		Escribir "Seleccione una opción:"
 		Leer opcionMenu
@@ -81,19 +89,18 @@ FinProceso
 // Ejercicio 1: Calculadora de vuelto
 // Pedir costo y dinero recibido. Calcular y mostrar el vuelto o advertir si no alcanza.
 SubProceso Ejercicio_1
-	// Definimos las variables que almacenaran los valores
-	Definir costo, saldo, vuelto Como Real
-	// Inicializamos las variables numericas
-	costo = 0; saldo = 0; vuelto = 0
-	// Indicamos el requirimiento de informacion al usuario
-	Escribir "ingresa el costo del producto:"; Leer costo // Actualizamos el valor de la varianle "costo"
-	Escribir "ingresa el saldo para cancelar"; Leer saldo // Actualizamos el valor de la varianle "saldo"
+	// ENTRADA
+	Definir costo, saldo, vuelto Como Real // Definimos las variables reales
+	costo = 0; saldo = 0; vuelto = 0 // Inicializamos variables
+	// PROCESO: indicamos el requirimiento de informacion al usuario
+	Escribir "ingresa el costo del producto:"; Leer costo // Actualizamos la vairable "costo"
+	Escribir "ingresa el saldo para cancelar"; Leer saldo // Actualizamos la varianle "saldo"
 	// Desarrollamos la logica del programa
-	Si saldo > costo Entonces // CASO VERDADERO: comprobamos que hay saldo suficiente para cubrir el costo
-		vuelto = saldo - costo // Calculamos el valor de la variable "vuelto"
-		Escribir "El vuelto a entregar es de: " vuelto "$." // Mostramos al usuario el resultado
-	SiNo // CASO FALSO: si el saldo es menor que el costo
-		Escribir "Saldo insuficiente." // Indicamos el conflicto
+	Si saldo > costo Entonces // Comprobamos si el saldo es suficiente para cubrir el costo
+		vuelto = saldo - costo // Calculamos la variable "vuelto"
+		Escribir "El vuelto a entregar es de: " vuelto "$." // SALIDA: Mostramos un mensaje
+	SiNo // El saldo es menor que el costo
+		Escribir "Saldo insuficiente." // SALIDA: Indicamos el conflicto con un mensaje
 	FinSi
 FinSubProceso
 
@@ -101,28 +108,27 @@ FinSubProceso
 // Convertir entre kilogramos y libras. Mostrar el resultado.
 SubProceso Ejercicio_2
 	//ENTRADA
-	Definir kilogramos, libras  Como real
-	Definir metodo como real
-	kilogramos=0;libras=0
+	Definir kilogramos, libras, metodo Como Real // Definimos las variables
+	kilogramos = 0; libras = 0; metodo = 0 // Inicializamos variables
 	//PROCESO
-	Escribir "conversor de kilogramos a libras y viceversa"         //TENER SIEMPRE EN CUENTA LAS VARIABLES 
-	Escribir "Seleccione una opción "                              // TENER UN METODO  DE OPCIÓNES POR EJEMPLO "1" Y "2" 
+	Escribir "conversor de kilogramos a libras y viceversa"         // TENER SIEMPRE EN CUENTA LAS VARIABLES 
+	Escribir "Seleccione una opción "                               // TENER UN METODO  DE OPCIÓNES POR EJEMPLO "1" Y "2" 
 	Escribir "1 convertir kilogramos a libras"   
 	escribir "2 Convertir Libras a kilogramos "
 	leer metodo
 	//PRIORIZAR LAS FORMULAS INVESTIGARLAS ANTES DE INGRESARLAS
 	//SALIDA
 	si metodo=1
-		escribir "ingrese el peso en Kilogramos  "
-		leer kilogramos                                                           //A LAS OPCIONES PONER VARIABLES Y DEPUES LA OPCION COMO ,
+		escribir "ingrese el peso en Kilogramos"
+		leer kilogramos                                                           // A LAS OPCIONES PONER VARIABLES Y DEPUES LA OPCION COMO ,
 		libras=(kilogramos*2.20462)                                               // ESTA EN EL CODIGO 
-		Escribir kilogramos " kilogramos son " , libras, " libras"                  //PRIORIZAR UNA BUENA SALIDA DEL CODIGO 
+		Escribir kilogramos " kilogramos son " , libras, " libras"               // PRIORIZAR UNA BUENA SALIDA DEL CODIGO 
 	SiNo
 		si metodo=2 
-			Escribir " Ingrese el peso en libras "
+			Escribir "Ingrese el peso en libras"
 			leer libras
 			kilogramos=(libras/2.20462)
-			Escribir libras " libra son " , kilogramos " kilogramos"
+			Escribir libras " libraa son " , kilogramos " kilogramos"
 		FinSi
 	FinSi
 FinSubProceso
@@ -130,24 +136,23 @@ FinSubProceso
 // Ejercicio 3: Calculadora de descuentos
 // Aplicar 0%, 5% o 10% de descuento según el monto de compra.
 SubProceso Ejercicio_3
-	// Definimos las variables que almacenaran los valores
-	Definir compra, descuento, pagar Como Real
-	// Inicializamos las variables numericas
-	compra = 0; descuento = 0; pagar = 0
-	// Indicamos el requirimiento de informacion al usuario
-	Escribir "Ingresa el valor de su compra:"; Leer compra // Actualizamos el valor de la variable "compra"
+	// ENTRADA
+	Definir compra, descuento, pagar Como Real // Definimos las variables reales
+	compra = 0; descuento = 0; pagar = 0 // Inicializamos las variables numericas
+	// PROCESO: indicamos el requirimiento de informacion al usuario
+	Escribir "Ingresa el valor de su compra:"; Leer compra // Actualizamos la variable "compra"
 	// Desarrollamos la logica del programa
 	Si compra >= 20 y compra <= 50 Entonces // CASO VERDADERO: comprobar si la compra cumple los parametro entre 20 a 50
 		descuento = compra * (5/100) // Calculamos el valor de la variable "descuento"
 		pagar = compra - descuento // Calculamos el valor de la variable "pagar"
-		Escribir "Tu compra aplica al 5% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // Mostramos al usuario el resultado
-	Sino // CASO FALSO: si no se cumplen los parametros anteriores y la compra es mayor a 50
-		Si compra > 50 Entonces // SUBCASO VERDADERO
+		Escribir "Tu compra aplica al 5% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // SALIDA: Mostramos un mensaje
+	Sino // CASO FALSO: si no se cumplen los parametros anteriores
+		Si compra > 50 Entonces // SUBCASO VERDADERO: comprobar si la compra es mayor a 50
 			descuento = compra * (10/100) // Calculamos el valor de la variable "descuento"
 			pagar = compra - descuento // Calculamos el valor de la variable "pagar"
-			Escribir "Tu compra aplica al 10% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // Mostramos al usuario el resultado
+			Escribir "Tu compra aplica al 10% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // SALIDA: Mostramos un mensaje
 		SiNo // SUBCASO FALSO: ninguno de los parametros anteriores se cumplieron
-			Escribir "Tu compra no aplica a ningun descuento, valor a pagar: " compra "$" // Mostramos al usuario el resultado
+			Escribir "Tu compra no aplica a ningun descuento, valor a pagar: " compra "$" // SALIDA: Mostramos un mensaje
 		FinSi
 	FinSi
 FinSubProceso
@@ -176,21 +181,20 @@ FinSubProceso
 // Ejercicio 5: Comparación de precios entre dos productos
 // Pedir dos precios. Mostrar cuál es mayor, menor o si son iguales.
 SubProceso Ejercicio_5
-	// Definimos las variables que almacenaran los valores
-	Definir precio_1, precio_2 Como Real
-	// Inicializamos las variables numericas
-	precio_1 = 0; precio_2 = 0
-	// Indicamos el requirimiento de informacion al usuario
-	Escribir "Ingresa el primer precio:"; Leer precio_1 // Actualizamos el valor de la variable "precio_1"
-	Escribir "Ingresa el segundo precio:"; Leer precio_2 // Actualizamos el valor de la variable "precio_2"
+	// ENTRADA
+	Definir precio_1, precio_2 Como Real // Definimos las variables
+	precio_1 = 0; precio_2 = 0 // Inicializamos las variables numericas
+	// PROCESO: indicamos el requirimiento de informacion al usuario
+	Escribir "Ingresa el primer precio:"; Leer precio_1 // Actualizamos la variable "precio_1"
+	Escribir "Ingresa el segundo precio:"; Leer precio_2 // Actualizamos la variable "precio_2"
 	// Desarrollamos la logica del programa
 	Si precio_1 = precio_2 Entonces // CASO VERDADERO: ambos precios ingresados son iguales
-		Escribir "El primer precio ingresado es igual que el segundo: " precio_1 "$ = " precio_2 "$." // Mostramos al usuario el resultado
-	SiNo // SUBCASO FALSO: los precios ingresados son diferentes
+		Escribir "El primer precio ingresado es igual que el segundo: " precio_1 "$ = " precio_2 "$." // SALIDA: Mostramos un mensaje
+	SiNo // CASO FALSO: los precios ingresados son diferentes
 		Si precio_1 > precio_2 Entonces // SUBCASO VERDADERO: el primer precio ingresado es mayor que el segundo
-			Escribir "El primer precio ingresado es mayor que el segundo: " precio_1 "$ > " precio_2 "$." // Mostramos al usuario el resultado
+			Escribir "El primer precio ingresado es mayor que el segundo: " precio_1 "$ > " precio_2 "$." // SALIDA: Mostramos un mensaje
 		SiNo // SUBCASO FALSO: el primer precio es menor que el segundo
-			Escribir "El primer precio ingresado es menor que el segundo: " precio_1 "$ < " precio_2 "$." // Mostramos al usuario el resultado
+			Escribir "El primer precio ingresado es menor que el segundo: " precio_1 "$ < " precio_2 "$." // SALIDA: Mostramos un mensaje
 		FinSi
 	FinSi
 FinSubProceso
@@ -221,28 +225,26 @@ FinSubProceso
 // Ejercicio 7: Identificador de número par o impar
 // Pedir un número y decir si es par y multiplo de 10. Para el caso de par utilice el mod de PseInt y para el caso de multiplo de 10 implemente usted mismo el mod.
 SubProceso Ejercicio_7
-	// Definimos las variables que almacenaran los valores
-	Definir num Como Real
-	// Definimos variables booleanas para controlar la veracidad de los casos
-	Definir paridad, mymod Como Logico
-	// Inicializamos las variables numericas y bolleanas
-	num = 0; paridad = falso; mymod = falso
-	// Indicamos el requirimiento de informacion al usuario
-	Escribir "Ingresa un numero:"; Leer num // Actualizamos el valor de la variable "num"
-	// Desarrollamos la logica del programa - comprobar paridad
-	paridad <- num % 2 == 0 // Actualizamos el valor de la variable "paridad"
-	// Desarrollamos la logica del programa - comprobar si es multiplo de 10
-	mymod <- (num/10) == (trunc(num/10)) // Actualizamos el valor de la variable "multipl0"
-	Escribir "El numero " num " es:" // Mostramos un mensaje indicando que:
-	Si paridad Entonces // CASO VERDADERO: si la variable booleana es verdadera
-		Escribir "* par." // Mostramos al usuario el resultado
+	// ENTRADA
+	Definir num Como Real // Definimos las variables reales
+	Definir paridad, mymod Como Logico // Definimos variables booleanas
+	num = 0; paridad = falso; mymod = falso // Inicializamos las variables numericas y bolleanas
+	// PROCESO: indicamos el requirimiento de informacion al usuario
+	Escribir "Ingresa un numero:"; Leer num // Actualizamos la variable "num"
+	// Comprobar paridad
+	paridad <- num % 2 == 0 // Actualizamos la variable "paridad"
+	// Comprobar si es multiplo de 10 usando un conjunto de expresiones sin usar MOD o %
+	mymod <- (num/10) == (trunc(num/10)) // Actualizamos la variable "multipl0"
+	Escribir "El numero " num " es:" // SALIDA: Mostramos un mensaje
+	Si paridad Entonces // CASO VERDADERO: variable booleana es verdadera
+		Escribir "* par." // SALIDA: Mostramos un mensaje
 	Sino // CASO FALSO: si la variable booleana es falsa
-		Escribir "* impar." // Mostramos al usuario el resultado
+		Escribir "* impar." // SALIDA: Mostramos un mensaje
 	FinSi
-	Si mymod Entonces // CASO VERDADERO: si la variable booleana es verdadera
-		Escribir "* multiplo de 10." // Mostramos al usuario el resultado
+	Si mymod Entonces // CASO VERDADERO: la variable booleana es verdadera
+		Escribir "* multiplo de 10." // SALIDA: Mostramos un mensaje
 	SiNo // CASO FALSO: si la variable booleana es falsa
-		Escribir "* no es multiplo de 10." // Mostramos al usuario el resultado
+		Escribir "* no es multiplo de 10." // SALIDA: Mostramos un mensaje
 	FinSi
 FinSubProceso
 
@@ -251,18 +253,21 @@ FinSubProceso
 SubProceso Ejercicio_8
 	//ENTRADA 
 	Definir puntuacion Como Entero
-	puntuacion=0
-	//PROCESO Y SALIDA
+	puntuacion = 0
+	//PROCESO
 	Escribir " Escriba su puntuación del examen " ; leer puntuacion 
 	//NUEVAMENTE UTILIZAMOS EL (SI Y EL SINO PARA HACER ESTE CODIGO)
 	//ASEGURAR CERRAR TODOS LOS SI CON FINSI Y Definir BIEN NUESTRA VARIABLE
-	si puntuacion<=4 Entonces
+	si puntuacion <= 4 Entonces
 		escribir "Su puntuacion es malo " 
-	sino si puntuacion<=6 Entonces
+	sino 
+		si puntuacion <= 6 Entonces
 			escribir "Su puntuacion es regular " //UTILIZAMOS OPERADORES RACIONALES
-		sino si puntuacion <=8 Entonces
+		sino 
+			si puntuacion <= 8 Entonces
 				Escribir "Su puntuacion es buena " 
-			sino si puntuacion>= 9 Entonces
+			sino 
+				si puntuacion >= 9 Entonces
 					Escribir "Usted tiene una Excelente puntuacion"
 				FinSi
 			FinSi
