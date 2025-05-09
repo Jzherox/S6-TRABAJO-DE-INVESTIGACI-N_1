@@ -89,46 +89,53 @@ FinProceso
 // Ejercicio 1: Calculadora de vuelto
 // Pedir costo y dinero recibido. Calcular y mostrar el vuelto o advertir si no alcanza.
 SubProceso Ejercicio_1
+	// 1. La lógica del programa requiere 3 variables: costo, saldo y vuelto.
+	// 2. Pedimos al usuario los valores necesarios.
+	// 3. Calculamos el vuelto y si el saldo es suficiente.
+	// 4. Mostramos el resultado al usuario.
+	
 	// ENTRADA
-	Definir costo, saldo, vuelto Como Real // Definimos las variables reales
-	costo = 0; saldo = 0; vuelto = 0 // Inicializamos variables
-	// PROCESO: indicamos el requirimiento de informacion al usuario
-	Escribir "ingresa el costo del producto:"; Leer costo // Actualizamos la vairable "costo"
-	Escribir "ingresa el saldo para cancelar"; Leer saldo // Actualizamos la varianle "saldo"
-	// Desarrollamos la logica del programa
-	Si saldo > costo Entonces // Comprobamos si el saldo es suficiente para cubrir el costo
-		vuelto = saldo - costo // Calculamos la variable "vuelto"
-		Escribir "El vuelto a entregar es de: " vuelto "$." // SALIDA: Mostramos un mensaje
-	SiNo // El saldo es menor que el costo
-		Escribir "Saldo insuficiente." // SALIDA: Indicamos el conflicto con un mensaje
+	Definir costo, saldo, vuelto Como Real  // Declaramos las variables
+	costo = 0; saldo = 0; vuelto = 0         // Inicializamos las variables
+	// Solicitamos datos al usuario
+	Escribir "Ingresa el costo del producto:"; Leer costo
+	Escribir "Ingresa el saldo para cancelar:"; Leer saldo
+	// PROCESO
+	Si saldo > costo Entonces
+		vuelto = saldo - costo // Calculamos el vuelto
+		Escribir "El vuelto a entregar es de: ", vuelto, " $." // SALIDA
+	SiNo
+		Escribir "Saldo insuficiente." // SALIDA
 	FinSi
 FinSubProceso
 
 // Ejercicio 2: Conversor de kilogramos a libras y viceversa
 // Convertir entre kilogramos y libras. Mostrar el resultado.
 SubProceso Ejercicio_2
+	// 1. La lógica del programa requiere 3 variables: kilogramos, libras y metodo.
+	// 2. Pedimos al usuario que realice una seleccion e ingreselos valores necesarios.
+	// 3. Calculamos las equivalencia de libras y kilogramos usando formulas.
+	// 4. Mostramos el resultado al usuario.
+	
 	//ENTRADA
 	Definir kilogramos, libras, metodo Como Real // Definimos las variables
 	kilogramos = 0; libras = 0; metodo = 0 // Inicializamos variables
-	//PROCESO
-	Escribir "conversor de kilogramos a libras y viceversa"         // TENER SIEMPRE EN CUENTA LAS VARIABLES 
-	Escribir "Seleccione una opción "                               // TENER UN METODO  DE OPCIÓNES POR EJEMPLO "1" Y "2" 
+	// Solicitamos el valor de "metodo"
+	Escribir "conversor de kilogramos a libras y viceversa"
+	Escribir "Seleccione una opción "                          // TENER UN METODO DE OPCIÓNES POR EJEMPLO "1" Y "2" 
 	Escribir "1 convertir kilogramos a libras"   
 	escribir "2 Convertir Libras a kilogramos "
 	leer metodo
-	//PRIORIZAR LAS FORMULAS INVESTIGARLAS ANTES DE INGRESARLAS
-	//SALIDA
-	si metodo=1
-		escribir "ingrese el peso en Kilogramos"
-		leer kilogramos                                                           // A LAS OPCIONES PONER VARIABLES Y DEPUES LA OPCION COMO ,
-		libras=(kilogramos*2.20462)                                               // ESTA EN EL CODIGO 
-		Escribir kilogramos " kilogramos son " , libras, " libras"               // PRIORIZAR UNA BUENA SALIDA DEL CODIGO 
+	//PROCESO
+	si metodo = 1 Entonces
+		escribir "ingrese el peso en Kilogramos"; Leer kilogramos // Solicitamos el valor de "kilogramos"
+		libras = (kilogramos*2.20462) // Formula para calcular libras
+		Escribir kilogramos " kilogramos son " , libras, " libras" // SALIDA
 	SiNo
-		si metodo=2 
-			Escribir "Ingrese el peso en libras"
-			leer libras
-			kilogramos=(libras/2.20462)
-			Escribir libras " libraa son " , kilogramos " kilogramos"
+		si metodo = 2 Entonces
+			Escribir "Ingrese el peso en libras"; Leer libras  // Solicitamos el valor de "libras"
+			kilogramos = (libras/2.20462) // Formula para calcular kilogramos
+			Escribir libras " libraa son " , kilogramos " kilogramos" // SALIDA
 		FinSi
 	FinSi
 FinSubProceso
@@ -136,23 +143,28 @@ FinSubProceso
 // Ejercicio 3: Calculadora de descuentos
 // Aplicar 0%, 5% o 10% de descuento según el monto de compra.
 SubProceso Ejercicio_3
+	// 1. La lógica del programa requiere 3 variables: compra, descuento y pagar.
+	// 2. Pedimos al usuario los valores necesarios.
+	// 3. Calculamos las equivalencia de libras y kilogramos usando formulas.
+	// 4. Mostramos el resultado al usuario.
+	
 	// ENTRADA
 	Definir compra, descuento, pagar Como Real // Definimos las variables reales
 	compra = 0; descuento = 0; pagar = 0 // Inicializamos las variables numericas
-	// PROCESO: indicamos el requirimiento de informacion al usuario
-	Escribir "Ingresa el valor de su compra:"; Leer compra // Actualizamos la variable "compra"
-	// Desarrollamos la logica del programa
-	Si compra >= 20 y compra <= 50 Entonces // CASO VERDADERO: comprobar si la compra cumple los parametro entre 20 a 50
+	// Solicitamos datos al usuario
+	Escribir "Ingresa el valor de su compra:"; Leer compra
+	// PROCESO
+	Si compra >= 20 y compra <= 50 Entonces // CASO: comprobar si la compra cumple los parametro entre 20 a 50
 		descuento = compra * (5/100) // Calculamos el valor de la variable "descuento"
 		pagar = compra - descuento // Calculamos el valor de la variable "pagar"
-		Escribir "Tu compra aplica al 5% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // SALIDA: Mostramos un mensaje
-	Sino // CASO FALSO: si no se cumplen los parametros anteriores
+		Escribir "Tu compra aplica al 5% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // SALIDA
+	Sino // CASO: si no se cumplen los parametros anteriores
 		Si compra > 50 Entonces // SUBCASO VERDADERO: comprobar si la compra es mayor a 50
 			descuento = compra * (10/100) // Calculamos el valor de la variable "descuento"
 			pagar = compra - descuento // Calculamos el valor de la variable "pagar"
-			Escribir "Tu compra aplica al 10% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // SALIDA: Mostramos un mensaje
-		SiNo // SUBCASO FALSO: ninguno de los parametros anteriores se cumplieron
-			Escribir "Tu compra no aplica a ningun descuento, valor a pagar: " compra "$" // SALIDA: Mostramos un mensaje
+			Escribir "Tu compra aplica al 10% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // SALIDA
+		SiNo // SUBCASO: ninguno de los parametros anteriores se cumplieron
+			Escribir "Tu compra no aplica a ningun descuento, valor a pagar: " compra "$" // SALIDA
 		FinSi
 	FinSi
 FinSubProceso
