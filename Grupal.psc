@@ -92,7 +92,8 @@ SubProceso Ejercicio_1
 	// 1. La lógica del programa requiere 3 variables: costo, saldo y vuelto.
 	// 2. Pedimos al usuario los valores necesarios.
 	// 3. Calculamos el vuelto y si el saldo es suficiente.
-	// 4. Mostramos el resultado al usuario.
+	// 4. Comparamos los valores de las variables con condicionales para obtener un resultado.
+	// 5. Mostramos el resultado al usuario.
 	
 	// ENTRADA
 	Definir costo, saldo, vuelto Como Real  // Declaramos las variables
@@ -115,6 +116,7 @@ SubProceso Ejercicio_2
 	// 1. La lógica del programa requiere 3 variables: kilogramos, libras y metodo.
 	// 2. Pedimos al usuario que realice una seleccion e ingreselos valores necesarios.
 	// 3. Calculamos las equivalencia de libras y kilogramos usando formulas.
+	// 4. Comparamos el valor de "metodo" con condicionales para obtener un resultado.
 	// 4. Mostramos el resultado al usuario.
 	
 	//ENTRADA
@@ -145,8 +147,9 @@ FinSubProceso
 SubProceso Ejercicio_3
 	// 1. La lógica del programa requiere 3 variables: compra, descuento y pagar.
 	// 2. Pedimos al usuario los valores necesarios.
-	// 3. Calculamos las equivalencia de libras y kilogramos usando formulas.
-	// 4. Mostramos el resultado al usuario.
+	// 3. Calculamos el valor a pagar y el porcentaje de descuento que aplica según el monto de compra.
+	// 4. Comparamos los valores de las variables con condicionales para obtener un resultado.
+	// 5. Mostramos el resultado al usuario.
 	
 	// ENTRADA
 	Definir compra, descuento, pagar Como Real // Definimos las variables
@@ -154,17 +157,18 @@ SubProceso Ejercicio_3
 	// Solicitamos datos al usuario
 	Escribir "Ingresa el valor de su compra:"; Leer compra
 	// PROCESO
-	Si compra >= 20 y compra <= 50 Entonces // CASO: comprobar si la compra cumple los parametro entre 20 a 50
-		descuento = compra * (5/100) // Calculamos el valor de la variable "descuento"
-		pagar = compra - descuento // Calculamos el valor de la variable "pagar"
+	Si compra >= 20 y compra <= 50 Entonces
+		// Calculamos "descuento" y "pagar"
+		descuento = compra * (5/100) // descuento del 5%
+		pagar = compra - descuento
 		Escribir "Tu compra aplica al 5% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // SALIDA
-	Sino // CASO: si no se cumplen los parametros anteriores
-		Si compra > 50 Entonces // SUBCASO VERDADERO: comprobar si la compra es mayor a 50
-			// Calculamos el valor de la variable "descuento" y "pagar"
-			descuento = compra * (10/100) 
+	Sino
+		Si compra > 50 Entonces
+			// Calculamos "descuento" y "pagar"
+			descuento = compra * (10/100) // descuento del 10%
 			pagar = compra - descuento
 			Escribir "Tu compra aplica al 10% de descuento, ahorras: " descuento "$, total a pagar: " pagar "$" // SALIDA
-		SiNo // SUBCASO: ninguno de los parametros anteriores se cumplieron
+		SiNo
 			Escribir "Tu compra no aplica a ningun descuento, valor a pagar: " compra "$" // SALIDA
 		FinSi
 	FinSi
@@ -176,21 +180,23 @@ SubProceso Ejercicio_4
 	// 1. La lógica del programa requiere multiples variables.
 	// 2. Pedimos al usuario los valores necesarios.
 	// 3. Calculamos los valores de las variables usando expresiones matematicas.
+	//    - formula para obtener el precio con descuento,
+	//    - formula para obtener el recio con IVA,
+	//    - formula para obtener el precio final.
 	// 4. Mostramos el resultado al usuario.
 	
 	// ENTRADA
-	Definir precio, iva, descuento, precioConDescuento, valorDescuento, valorIVA, precioFinal Como Real // DECLARACIÓN DE VARIABLES
-	precio = 0; precioConDescuento = 0; valorDescuento = 0; valorIVA = 0; precioFinal = 0 // INICIALIZACIÓN DE VARIABLES
+	Definir precio, iva, descuento, precioConDescuento, valorIVA, precioFinal Como Real // DECLARACIÓN DE VARIABLES
+	precio = 0; precioConDescuento = 0; valorIVA = 0; precioFinal = 0 // INICIALIZACIÓN DE VARIABLES
 	iva = 0.15; descuento = 0.30 // OTORGAMOS VALORES YA CONOCIDOS
 	// Solicitamos datos al usuario
 	Escribir "Ingrese el precio del producto:"; Leer precio
 	// PROCESO: PONEMOS LAS FORMULAS PARA CALCULAR LOS VALORES DE LAS VARIABLES
-	valorDescuento <- precio * descuento
-	precioConDescuento <- precio - valorDescuento
+	precioConDescuento <- precio - (precio * descuento)
 	valorIVA <- precioConDescuento * iva
 	precioFinal <- precioConDescuento + valorIVA
-	// SALIDA
-	Escribir "Precio con descuento: ", precioConDescuento, " $"
+	// SALIDAS
+	Escribir "Precio con descuento (30%): ", precioConDescuento, " $"
 	Escribir "Valor del IVA (15%): ", valorIVA, " $"
 	Escribir "Precio final a pagar: ", precioFinal, " $"
 FinSubProceso
@@ -200,7 +206,7 @@ FinSubProceso
 SubProceso Ejercicio_5
 	// 1. La lógica del programa requiere 2 variables: precio_1 y precio_2.
 	// 2. Pedimos al usuario los valores necesarios.
-	// 3. Comparamos los valores de las variables para obtener un resultado.
+	// 3. Comparamos los valores de las variables de precios entre para saber cuál es mayor, menor o si son iguales.
 	// 4. Mostramos el resultado al usuario.
 	
 	// ENTRADA
@@ -210,12 +216,12 @@ SubProceso Ejercicio_5
 	Escribir "Ingresa el primer precio:"; Leer precio_1
 	Escribir "Ingresa el segundo precio:"; Leer precio_2
 	// PROCESO
-	Si precio_1 = precio_2 Entonces // CASO: ambos precios ingresados son iguales
+	Si precio_1 = precio_2 Entonces
 		Escribir "El primer precio ingresado es igual que el segundo: " precio_1 "$ = " precio_2 "$." // SALIDA
-	SiNo // CASO FALSO: los precios ingresados son diferentes
-		Si precio_1 > precio_2 Entonces // SUBCASO: el primer precio ingresado es mayor que el segundo
+	SiNo
+		Si precio_1 > precio_2 Entonces
 			Escribir "El primer precio ingresado es mayor que el segundo: " precio_1 "$ > " precio_2 "$." // SALIDA
-		SiNo // SUBCASO: el primer precio es menor que el segundo
+		SiNo
 			Escribir "El primer precio ingresado es menor que el segundo: " precio_1 "$ < " precio_2 "$." // SALIDA
 		FinSi
 	FinSi
@@ -224,21 +230,27 @@ FinSubProceso
 // Ejercicio 6: Clasificador de edad del cliente
 // Pedir edad. Indicar si es niño (0-12), joven (13-17), adulto (18-64), adulto mayor (65+).
 SubProceso Ejercicio_6
+	// 1. La lógica del programa requiere una variable que almacene la edad: "edad".
+	// 2. Pedimos al usuario el valor de la variable "edad".
+	// 3. Usamos condicionales para comprobar si la edad es de un niño (0-12), joven (13-17), adulto (18-64), adulto mayor (65+).
+	// 4. Mostramos el resultado al usuario.
+	
 	// ENTRADA
-	Definir edad Como Entero
-	Escribir "Ingrese su edad: "
-	Leer edad
-	// PROCESO Y SALIDA
-	Si edad <= 12 Entonces //EN ESTOS CASOS SE UTILIZA EL SI Y EL SINO PARA HACER EL CODIGO MAS LIGERO MAS RAPIDO
-		Escribir "Usted es un niño. Tiene ", edad, " años."
+	Definir edad Como Entero // Definimos la variable "edad"
+	edad = 0 //  Inicializamos la variable
+	// Solicitamos datos al usuario
+	Escribir "Ingrese su edad:"; Leer edad
+	// PROCESO
+	Si edad <= 12 Entonces
+		Escribir "Usted es un niño. Tiene ", edad, " años." // SALIDA
 	Sino
 		Si edad <= 16 Entonces
-			Escribir "Usted es un joven. Tiene ", edad, " años." //TAMBIEN SE UTILIZAN OPERADORES RACIONALES EN ESTOS CASOS
+			Escribir "Usted es un joven. Tiene ", edad, " años." // SALIDA
 		Sino
-			Si edad <= 64 Entonces  // PARA SABER SI UN NUMERO ES MENOR O IGUAL
-				Escribir "Usted es un adulto. Tiene ", edad, " años."
+			Si edad <= 64 Entonces
+				Escribir "Usted es un adulto. Tiene ", edad, " años." // SALIDA
 			Sino
-				Escribir "Usted es un adulto mayor. Tiene ", edad, " años."
+				Escribir "Usted es un adulto mayor. Tiene ", edad, " años." // SALIDA
 			FinSi
 		FinSi
 	FinSi
@@ -247,50 +259,62 @@ FinSubProceso
 // Ejercicio 7: Identificador de número par o impar
 // Pedir un número y decir si es par y multiplo de 10. Para el caso de par utilice el mod de PseInt y para el caso de multiplo de 10 implemente usted mismo el mod.
 SubProceso Ejercicio_7
+	// 1. La lógica del programa requiere una variable que almacene un numero: "num".
+	// 2. Pedimos al usuario el valor de la variable "num".
+	// 3. Para el caso de multiplo de 10 implemente usted mismo el mod.
+	// 4. Usamos condicionales para comprobar si el numero es par y multiplo de 10.
+	// 5. Mostramos el resultado al usuario.
+	
 	// ENTRADA
-	Definir num Como Real // Definimos las variables reales
+	Definir num Como Entero // Definimos la variable "num"
 	Definir paridad, mymod Como Logico // Definimos variables booleanas
 	num = 0; paridad = falso; mymod = falso // Inicializamos las variables numericas y bolleanas
-	// PROCESO: indicamos el requirimiento de informacion al usuario
-	Escribir "Ingresa un numero:"; Leer num // Actualizamos la variable "num"
-	// Comprobar paridad
-	paridad <- num % 2 == 0 // Actualizamos la variable "paridad"
-	// Comprobar si es multiplo de 10 usando un conjunto de expresiones sin usar MOD o %
-	mymod <- (num/10) == (trunc(num/10)) // Actualizamos la variable "multipl0"
-	Escribir "El numero " num " es:" // SALIDA: Mostramos un mensaje
-	Si paridad Entonces // CASO VERDADERO: variable booleana es verdadera
-		Escribir "* par." // SALIDA: Mostramos un mensaje
-	Sino // CASO FALSO: si la variable booleana es falsa
-		Escribir "* impar." // SALIDA: Mostramos un mensaje
+	// Solicitamos datos al usuario
+	Escribir "Ingresa un numero:"; Leer num
+	// PROCESO
+	paridad <- num % 2 == 0 // Comprobamos la variable "paridad": Verdadero = par, Falso = impar
+	mymod <- (num/10) == (trunc(num/10)) // Comprobamos la variable "mymod" usando expresiones que comprueban si el numero es multiplo de 10 o no: Verdadero = es multiplo, Falso = no es multiplo
+	Escribir "El numero " num " es:" // SALIDA
+	// Comprobamos paridad
+	Si paridad Entonces
+		Escribir "* par." // SALIDA
+	Sino
+		Escribir "* impar." // SALIDA
 	FinSi
-	Si mymod Entonces // CASO VERDADERO: la variable booleana es verdadera
-		Escribir "* multiplo de 10." // SALIDA: Mostramos un mensaje
-	SiNo // CASO FALSO: si la variable booleana es falsa
-		Escribir "* no es multiplo de 10." // SALIDA: Mostramos un mensaje
+	// Comprobamos si el numero es multiplo de 10
+	Si mymod Entonces
+		Escribir "* multiplo de 10." // SALIDA
+	SiNo
+		Escribir "* no es multiplo de 10." // SALIDA
 	FinSi
 FinSubProceso
 
 // Ejercicio 8: Evaluador de puntuación de servicio
 // Pedir una puntuación del 1 al 10 e interpretar como "Malo", "Regular", "Bueno", "Excelente".
 SubProceso Ejercicio_8
+	// 1. La lógica del programa requiere una variable que almacene un numero: "puntuacion".
+	// 2. Pedimos al usuario el valor de la variable "puntuacion".
+	// 3. Usamos condicionales para interpretar como la puntuacion como: "Malo", "Regular", "Bueno", "Excelente".
+	// 4. Mostramos el resultado al usuario.
+	
 	//ENTRADA 
-	Definir puntuacion Como Entero
-	puntuacion = 0
+	Definir puntuacion Como Entero // Definimos la variable
+	puntuacion = 0  // Inicializamos la variable
+	// Solicitamos datos al usuario
+	Escribir "Escriba su puntuación del examen"; leer puntuacion
 	//PROCESO
-	Escribir " Escriba su puntuación del examen " ; leer puntuacion 
-	//NUEVAMENTE UTILIZAMOS EL (SI Y EL SINO PARA HACER ESTE CODIGO)
-	//ASEGURAR CERRAR TODOS LOS SI CON FINSI Y Definir BIEN NUESTRA VARIABLE
+	// Interpretamos la puntuacion
 	si puntuacion <= 4 Entonces
-		escribir "Su puntuacion es malo " 
+		escribir "Su puntuacion es malo" // SALIDA
 	sino 
 		si puntuacion <= 6 Entonces
-			escribir "Su puntuacion es regular " //UTILIZAMOS OPERADORES RACIONALES
+			escribir "Su puntuacion es regular" // SALIDA
 		sino 
 			si puntuacion <= 8 Entonces
-				Escribir "Su puntuacion es buena " 
+				Escribir "Su puntuacion es buena" // SALIDA
 			sino 
 				si puntuacion >= 9 Entonces
-					Escribir "Usted tiene una Excelente puntuacion"
+					Escribir "Usted tiene una Excelente puntuacion" // SALIDA
 				FinSi
 			FinSi
 		FinSi
@@ -300,61 +324,70 @@ FinSubProceso
 // Ejercicio 9: Verificador de múltiplo de 3 o múltiplo de 9 o múltiplo de 12
 // Pedir un número.
 SubProceso Ejercicio_9
-	// Definimos las variables que almacenaran los valores
-	Definir num Como Real
-	// Inicializamos las variables numericas
-	num = 0;
-	// Indicamos el requirimiento de informacion al usuario
-	Escribir "Ingresa un numero:"; Leer num // Actualizamos el valor de la variable "num"
-	// Desarrollamos la logica del programa
+	// 1. La lógica del programa requiere una variable que almacene un numero: "puntuacion".
+	// 2. Pedimos al usuario el valor de la variable "puntuacion".
+	// 3. Usamos condicionales con expresiones matematicas y logicas para interpretar si el numero es múltiplo de 3 o múltiplo de 9 o múltiplo de 12.
+	// 4. Mostramos el resultado al usuario.
+	
+	// ENTRADA
+	Definir num Como Entero // Definimos la variable
+	num = 0; // Inicializamos la variable
+	// Solicitamos datos al usuario
+	Escribir "Ingresa un numero:"; Leer num
+	// PROCESO
 	Escribir "El numero " num " es:" // Mostramos un mensaje indicando que:
-	// Primera condicional - Comprobar si es multiplo de 3
-	Si num % 3 == 0 Entonces // CASO VERDADERO
-		Escribir "* multiplo de 3." // Mostramos al usuario el resultado
-	SiNo // CASO FALSO
-		Escribir "* no es multiplo de 3." // Mostramos al usuario el resultado
+	// Comprobamos si es multiplo de 3
+	Si num % 3 == 0 Entonces
+		Escribir "* multiplo de 3." // SALIDA
+	SiNo
+		Escribir "* no es multiplo de 3." // SALIDA
 	FinSi
-	// Segunda condicional - Comprobar si es multiplo de 9
-	Si num % 9 == 0 Entonces // CASO VERDADERO
-		Escribir "* multiplo de 9." // Mostramos al usuario el resultado
-	SiNo // CASO FALSO
-		Escribir "* no es multiplo de 9." // Mostramos al usuario el resultado
+	// Comprobamos si es multiplo de 9
+	Si num % 9 == 0 Entonces
+		Escribir "* multiplo de 9." // SALIDA
+	SiNo
+		Escribir "* no es multiplo de 9." // SALIDA
 	FinSi
-	// Tercera condicional - Comprobar si es multiplo de 12
+	// Comprobamos si es multiplo de 12
 	Si num % 12 == 0 Entonces // CASO VERDADERO
-		Escribir "* multiplo de 12." // Mostramos al usuario el resultado
-	SiNo // CASO FALSO
-		Escribir "* no es multiplo de 12." // Mostramos al usuario el resultado
+		Escribir "* multiplo de 12." // SALIDA
+	SiNo
+		Escribir "* no es multiplo de 12." // SALIDA
 	FinSi
 FinSubProceso
 
 // Ejercicio 10: Calculadora de propina
 // Pedir valor de la cuenta. Calcular propina del 10% o 15% según nivel de servicio.
 SubProceso Ejercicio_10
+	// 1. La lógica del programa requiere una variable que almacene un numero: "precio" y "opcioon".
+	// 2. Pedimos al usuario el valor de la variable "opcioon".
+	// 3. Usamos condicionales con expresiones matematicas para calcular propina del 10% o 15% según nivel de servicio.
+	// 4. Mostramos el resultado al usuario.
+	
 	//ENTRADA
-	Definir cuenta, precio_propi, precifinal, precio como entero
-	Definir propina1, propina2, precio_propi2, preciofinal2  Como Real
-	Definir opcioon Como entero
-	cuenta=0 ; propina1=0.10 ;propina2=0.15 ;  precio_propi=0 ; precifinal =0; preciofinal2 =0; precio_propi2=0; opcioon=0
-	//PROCESO
-	//UTILIZAMOS BIEN LAS VARIABLES TENIENDO EN CUENTA COMO SE LLAMAN CADA UNA DE ELLAS 
-	Escribir "Ingrese el total de la cuenta " 
-	leer precio
+	Definir cuenta, precio_propi, precifinal, precio, opcioon Como Entero // Definimos la variableS
+	Definir propina1, propina2, precio_propi2, preciofinal2 Como Real // Definimos la variableS
+	cuenta = 0; precio_propi = 0; precifinal = 0; preciofinal2 = 0; precio_propi2 = 0; opcioon = 0 // Inicializamos las variables
+	propina1 = 0.10; propina2 = 0.15 // Inicializamos con valores ya conocidos
+	
+	// Solicitamos datos al usuario
+	Escribir "Ingrese el total de la cuenta "; Leer precio
 	Escribir "Seleccione el nivel del servicio"
 	Escribir "1. servicio regular (10% de propina) "
-	Escribir "2. Servivo excelente (15% de propina)"
-	leer opcioon
-	si opcioon=1
-		precio_propi=(precio*propina1)                // PONER BIEN LAS FORMULAS SI NO SABEN COMO HACER INVESTIGEN RECUERDEN QUE SI NO SABE HACER.,
-		precifinal=(precio+precio_propi)              // NO PODRAN HACER EL CODIGO 
-		//SALIDA
-		//ESCRIBIR BIEN LAS SALIDAS DETALLADAMENTE 
+	Escribir "2. Servivo excelente (15% de propina)"; Leer opcioon
+	//PROCESO
+	si opcioon = 1 Entonces
+		precio_propi = (precio*propina1) // PONER BIEN LAS FORMULAS SI NO SABEN COMO HACER INVESTIGEN RECUERDEN QUE SI NO SABE HACER NO PODRAN HACER EL CODIGO
+		precifinal = (precio+precio_propi)
+		//SALIDAS
 		Escribir "El valor de la cuenta es de " , precio
 		Escribir "El valor de la propina es de " , precio_propi
 		Escribir "El total de la cuenta es de " , precifinal
-	sino si opcioon=2
-			precio_propi2=(precio*propina2)
-			preciofinal2=(precio+precio_propi2)
+	sino
+		si opcioon = 2 Entonces
+			//SALIDAS
+			precio_propi2 = (precio*propina2)
+			preciofinal2 = (precio+precio_propi2)
 			Escribir "El valor de la cuenta es de " , precio
 			Escribir "El valor de la propina es de " , precio_propi2
 			Escribir "El total de la cuenta es de " , preciofinal2
