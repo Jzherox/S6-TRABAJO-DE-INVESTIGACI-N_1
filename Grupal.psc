@@ -326,7 +326,7 @@ FinSubProceso
 SubProceso Ejercicio_9
 	// 1. La lógica del programa requiere una variable que almacene un numero: "puntuacion".
 	// 2. Pedimos al usuario el valor de la variable "puntuacion".
-	// 3. Usamos condicionales con expresiones matematicas y logicas para interpretar si el numero es múltiplo de 3 o múltiplo de 9 o múltiplo de 12.
+	// 3. Usamos condicionales con expresiones logicas para interpretar si el numero es múltiplo de 3 o múltiplo de 9 o múltiplo de 12.
 	// 4. Mostramos el resultado al usuario.
 	
 	// ENTRADA
@@ -607,13 +607,13 @@ SubProceso Ejercicio_18
 	Definir biciesto como logico
 	año=0 
 	//PROCESO Y SALIDA 
-	Escribir " Ingrese un año " ; leer año                           //TENER EN CUENTA PONER BIEN EL MOD 
+	Escribir "Ingrese un año:"; leer año                           //TENER EN CUENTA PONER BIEN EL MOD 
 	si (año mod 4=0 y (año mod 100<>0 o año mod 400=0)) Entonces     //RECORDAR QUE SI MOD NO ESTA IGUALADO A NADA ENTONCES SIEMPRE SE
 		biciesto<- Verdadero                                          // IGUALA A 0 UN EJEMPLO ES (MOD 4) NO ESTA DIFINIDO ENTONCES SERIA 
-		Escribir año , " , su año es biciesto"                         //  MOD4=0 
+		Escribir año , ", su año es biciesto"                         //  MOD4=0 
 	sino 
 		biciesto<- Falso                                                // MUCHO CUIDADO CON Y SE DEFIERE MAS A <> LEER BIEN EL PROBLEAMA
-		Escribir año , " , su año no es biciesto"                   //POR ULTIMO PONER SI ES VERDADERO O FALSO 
+		Escribir año , ", su año no es biciesto"                   //POR ULTIMO PONER SI ES VERDADERO O FALSO 
 	FinSi
 FinSubProceso
 
@@ -664,13 +664,12 @@ SubProceso Ejercicio_21
 	Definir contador Como Entero
 	// Inicializamos el contador
 	contador = 0
+	// Inicializamos las variables
+	fiebre = ""; dificultadpararespirar = ""; dolordepecho = ""
 	// Solicitamos los síntomas al usuario
-	Escribir "¿Tienes fiebre? (si/no):"
-	Leer fiebre
-	Escribir "¿Tienes dificultad para respirar? (si/no):"
-	Leer dificultadpararespirar
-	Escribir "¿Tienes dolor de pecho? (si/no):"
-	Leer dolordepecho
+	Escribir "¿Tienes fiebre? (si/no):"; Leer fiebre
+	Escribir "¿Tienes dificultad para respirar? (si/no):"; Leer dificultadpararespirar
+	Escribir "¿Tienes dolor de pecho? (si/no):"; Leer dolordepecho
 	// Convertimos las respuestas a minúsculas para evitar errores por mayúsculas
 	fiebre = Minusculas(fiebre)
 	dificultadpararespirar = Minusculas(dificultadpararespirar)
