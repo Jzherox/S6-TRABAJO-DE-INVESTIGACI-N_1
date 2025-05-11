@@ -412,7 +412,7 @@ SubProceso Ejercicio_11
 	Si compra < 10 Entonces // "baja" (<$10)
 		Escribir "Tu compra de " compra "$ se clasifica como baja." // SALIDA
 	SiNo
-		Si compra >= 10 y compra <= 30  Entonces // "media" ($10-30)
+		Si compra >= 10 y compra <= 30  Entonces // "media" (>=10 - <=30)
 			Escribir "Tu compra de " compra "$ se clasifica como media." // SALIDA
 		SiNo
 			Si compra > 30 Entonces // "alta" (>$30)
@@ -448,7 +448,7 @@ FinSubProceso
 SubProceso Ejercicio_13
 	// 1. La lógica del programa requiere 2 variables que almacene la edad y el saldo.
 	// 2. Pedimos al usuario el valor de la variables.
-	// 3. Usamos condicionales con expresiones logicas para si tiene más de 18 años y al menos $1.
+	// 3. Usamos condicionales con expresiones logicas para saber si tiene más de 18 años y al menos $1.
 	// 4. Mostramos el resultado al usuario.
 	
 	// ENTRADA
@@ -514,33 +514,36 @@ FinSubProceso
 // Ejercicio 15: Cálculo de cambio exacto con billetes de $10 y $5
 // Pedir valor del vuelto y mostrar cuántos billetes de $10 y $5 necesita.
 SubProceso Ejercicio_15
-	// Definimos las variables que almacenaran los valores
-	Definir saldo, costo, cambio, cambiototal Como Real
+	// 1. La lógica del programa requiere multiples variables que almacene las valores.
+	// 2. Pedimos al usuario el valor de la variables.
+	// 3. Usamos condicionales con expresiones logicas y matematicas para saber el valor del vuelto y mostrar cuántos billetes de $10 y $5 necesita.
+	// 4. Mostramos el resultado al usuario.
+	
+	// ENTRADA
+	Definir saldo, costo, cambio, cambiototal Como Real // Definimos las variables
 	Definir b10, b5, monedas Como Entero
-	// Inicializamos las variables numericas
-	saldo = 0; costo = 0; cambio = 0; cambiototal = 0; b10 = 0; b5 = 0
+	saldo = 0; costo = 0; cambio = 0; cambiototal = 0; b10 = 0; b5 = 0 // Inicializamos las variables
 	// Indicamos el requirimiento de informacion al usuario
-	Escribir "Saldo:"; Leer saldo // Actualizamos el valor de la variable "saldo"
-	Si saldo <= 0 Entonces // Verificamos si el Saldo es suficiente para una posible compra
-		// Indicamos el requirimiento de informacion al usuario
+	Escribir "Saldo:"; Leer saldo
+	// PROCESO
+	Si saldo <= 0 Entonces // Verificamos si el Saldo es suficiente
 		Escribir "Saldo insuficiente para cualquier compra." // Mostramos al usuario un conflicto
-	SiNo // Caso contrario
-		// Indicamos el requirimiento de informacion al usuario
-		Escribir "Costo:"; Leer costo // Actualizamos el valor de la variable "costo"
+	SiNo
+		Escribir "Costo:"; Leer costo
 		Si costo > saldo Entonces // Verificamos si el Saldo es suficiente para la compra
 			Escribir "Saldo insuficiente para la compra." // Mostramos al usuario un conflicto
-		SiNo // Caso contrario
-			cambio = saldo - costo // Calculamos y actualizamos el valor de la variable "cambio"
-			cambiototal = cambio // Calculamos y actualizamos el valor de la variable "cambiototal"
+		SiNo
+			cambio = saldo - costo // Calculamos el "cambio"
+			cambiototal = cambio // Calculamos el "cambiototal"
 			b10 = trunc(cambio/10) // Calculamos y actualizamos el valor de la variable "b10" y usamos trunc para eliminar la parte decimal y ayuda a obtener el número de billetes de 10 en enteros
 			Si b10 >= 1 Entonces // Verificamos si la cantidad de billestes es mayor o igual a 1
-				cambio = cambio - (b10 * 10) // Calculamos y actualizamos el valor de la variable "cambio"
+				cambio = cambio - (b10 * 10) // Calculamos "cambio"
 			FinSi
 			Si cambio >= 5 Entonces // Verificamos si el cambio es mayor o igual a 5
 				b5 = 1  // Actualizamos el valor de la variable "b5"
-				cambio = cambio - (b5 * 5) // Calculamos y actualizamos el valor de la variable "cambio"
+				cambio = cambio - (b5 * 5) // Calculamos "cambio"
 			FinSi
-			// Mostramos al usuario los resultados
+			// SALIDAS
 			Escribir "******************"
 			Escribir "billetes de 10$: " b10
 			Escribir "billetes de 5$: " b5
@@ -555,8 +558,7 @@ FinSubProceso
 // Pedir número del 1 al 7 y mostrar qué día es. Validar entrada.
 SubProceso Ejercicio_16
 	definir numeroo como entero
-	Escribir "Ingrese un numero del 1 al 7:"
-	leer numeroo
+	Escribir "Ingrese un numero del 1 al 7:"; Leer numeroo
 	segun numeroo hacer
 		1: Escribir "El dia es lunes"
 		2: Escribir "El dia es martes"
@@ -573,21 +575,25 @@ FinSubProceso
 // Ejercicio 17: Clasificador de producto por precio unitario
 // Pedir precio unitario y decir si es "económico", "regular" o "caro".
 SubProceso Ejercicio_17
-	// Definimos las variables que almacenaran los valores
-	Definir compra Como Real
-	// Inicializamos las variables numericas
-	compra = 0
+	// 1. La lógica del programa requiere una variable que almacene el valor de compra.
+	// 2. Pedimos al usuario el valor de la variable "compra".
+	// 3. Usamos condicionales con expresiones logicas para decir si es "económico", "regular" o "caro".
+	// 4. Mostramos el resultado al usuario.
+	
+	// ENTRADA
+	Definir compra Como Real // Definimos la variable
+	compra = 0 // Inicializamos la variable
 	// Indicamos el requirimiento de informacion al usuario
-	Escribir "Ingrese el precio de su producto:"; Leer compra // Actualizamos el valor de la variable "precio"
-	// Desarrollamos la logica del programa
-	Si compra < 20 Entonces // CASO VERDADERO
-		Escribir "Tu compra de " compra "$ se clasifica como económico." // Mostramos al usuario el resultado
-	SiNo // CASO FALSO
-		Si compra > 100 Entonces // SUBCASO VERDADERO
-			Escribir "Tu compra de " compra "$ se clasifica como caro." // Mostramos al usuario el resultado
-		SiNo // SUBCASO FALSO
-			Si compra >= 20 y precio <= 100  Entonces // SUBCASO VERDADERO
-				Escribir "Tu compra de " compra "$ se clasifica como regular." // Mostramos al usuario el resultado
+	Escribir "Ingrese el precio de su producto:"; Leer compra
+	// PROCESO
+	Si compra < 20 Entonces // "económico" (<$20)
+		Escribir "Tu compra de " compra "$ se clasifica como económico." // SALIDA
+	SiNo
+		Si compra >= 20 y compra <= 80  Entonces // "regular" (>=20 - <=80)
+			Escribir "Tu compra de " compra "$ se clasifica como regular." // SALIDA
+		SiNo
+			Si compra > 80 Entonces // "caro" (>$80)
+				Escribir "Tu compra de " compra "$ se clasifica como caro." // SALIDA
 			FinSi
 		FinSi
 	FinSi
