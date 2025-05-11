@@ -620,16 +620,20 @@ FinSubProceso
 // Ejercicio 19: Conversor de horas a minutos y segundos
 // Pedir horas y calcular su equivalencia en minutos y segundos.
 SubProceso Ejercicio_19
-	// Definimos las variables que almacenaran los valores
-	Definir horas, minutos, segund0s Como Real
-	// Inicializamos las variables numericas
-	horas = 0; minutos = 0; segund0s = 0
+	// 1. La lógica del programa requiere una variable que almacene las horas, minutos y segundos.
+	// 2. Pedimos al usuario el valor de la variable "horas".
+	// 3. Calculamos el valor de las variables "minutos" y "segund0s" con expresiones matematicas.
+	// 4. Mostramos el resultado al usuario.
+	
+	// ENTRADA
+	Definir horas, minutos, segund0s Como Real // Definimos las variables
+	horas = 0; minutos = 0; segund0s = 0 // Inicializamos las variables
 	// Indicamos el requirimiento de informacion al usuario
-	Escribir "Ingresa horas:"; Leer horas // Actualizamos el valor de la variable "horas"
-	// Desarrollamos la logica del programa
-	minutos = horas * 60 // Actualizamos el valor de la variable "minutos"
-	segund0s = minutos * 60 // Actualizamos el valor de la variable "segund0s"
-	Escribir horas " horas son " minutos " minutos, o " segund0s " segundos" // Mostramos al usuario el resultado
+	Escribir "Ingresa horas:"; Leer horas
+	// PROCESO
+	minutos = horas * 60 // Calculamos "minutos" en cada hora hay 60min
+	segund0s = minutos * 60 // Calculamos "segund0s" en cada minuto hay 60segs
+	Escribir horas " horas son " minutos " minutos, o " segund0s " segundos" // SALIDA
 FinSubProceso
 
 // Ejercicio 20: Verificador de triple de un número
