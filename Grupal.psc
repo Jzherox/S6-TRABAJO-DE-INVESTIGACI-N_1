@@ -398,21 +398,25 @@ FinSubProceso
 // Ejercicio 11: Clasificador de monto de compra
 // Categorizar la compra: "baja" (<$10), "media" ($10-30), "alta" (>$30).
 SubProceso Ejercicio_11
-	// Definimos las variables que almacenaran los valores
-	Definir compra Como Real
-	// Inicializamos las variables numericas
-	compra = 0
+	// 1. La lógica del programa requiere una variable que almacene el valor de compra.
+	// 2. Pedimos al usuario el valor de la variable "compra".
+	// 3. Usamos condicionales con expresiones logicas para Categorizar si la compra es: "baja" (<$10), "media" ($10-30), "alta" (>$30).
+	// 4. Mostramos el resultado al usuario.
+	
+	//ENTRADA
+	Definir compra Como Real // Definimos la variable
+	compra = 0 // Inicializamos la variable
 	// Indicamos el requirimiento de informacion al usuario
-	Escribir "Ingrese el valor de su compra:"; Leer compra // Actualizamos el valor de la variable "compra"
-	// Desarrollamos la logica del programa
-	Si compra < 10 Entonces // CASO VERDADERO
-		Escribir "Tu compra de " compra "$ se clasifica como baja." // Mostramos al usuario el resultado
-	SiNo // CASO FALSO
-		Si compra > 30 Entonces // SUBCASO VERDADERO
-			Escribir "Tu compra de " compra "$ se clasifica como alta." // Mostramos al usuario el resultado
-		SiNo // SUBCASO FALSO
-			Si compra >= 10 y compra <= 30  Entonces // SUBCASO VERDADERO
-				Escribir "Tu compra de " compra "$ se clasifica como media." // Mostramos al usuario el resultado
+	Escribir "Ingrese el valor de su compra:"; Leer compra
+	// PROCESO
+	Si compra < 10 Entonces // "baja" (<$10)
+		Escribir "Tu compra de " compra "$ se clasifica como baja." // SALIDA
+	SiNo
+		Si compra >= 10 y compra <= 30  Entonces // "media" ($10-30)
+			Escribir "Tu compra de " compra "$ se clasifica como media." // SALIDA
+		SiNo
+			Si compra > 30 Entonces // "alta" (>$30)
+				Escribir "Tu compra de " compra "$ se clasifica como alta." // SALIDA
 			FinSi
 		FinSi
 	FinSi
@@ -442,23 +446,27 @@ FinSubProceso
 // Ejercicio 13: Verificador de acceso por edad y dinero
 // Permitir entrar a la tienda si tiene más de 18 años y al menos $1.
 SubProceso Ejercicio_13
-	// Definimos las variables que almacenaran los valores
-	Definir edad, saldo Como Real
-	// Inicializamos las variables numericas
-	edad = 0; saldo = 0
+	// 1. La lógica del programa requiere 2 variables que almacene la edad y el saldo.
+	// 2. Pedimos al usuario el valor de la variables.
+	// 3. Usamos condicionales con expresiones logicas para si tiene más de 18 años y al menos $1.
+	// 4. Mostramos el resultado al usuario.
+	
+	// ENTRADA
+	Definir edad, saldo Como Real // Definimos las variables
+	edad = 0; saldo = 0 // Inicializamos las variables
 	// Indicamos el requirimiento de informacion al usuario
 	Escribir "Ingrese su edad:"; Leer edad // Actualizamos el valor de la variable "edad"
 	Escribir "Ingrese su saldo:"; Leer saldo // Actualizamos el valor de la variable "saldo"
-	// Desarrollamos la logica del programa
-	Si edad > 18 y saldo >= 1 Entonces // CASO VERDADERO
-		Escribir "Biemvenido a la tienda de POO" // Mostramos al usuario el resultado
-	SiNo // CASO FALSO
-		Escribir "No puedes ingresar a la tienda porque:"
-		Si edad <= 18 Entonces // SUBCASO VERDADERO
-			Escribir "* No cumples los requisitos de edad." // Mostramos al usuario el incumplimiento
+	// PROCESO
+	Si edad > 18 y saldo >= 1 Entonces // tiene más de 18 años y al menos $1
+		Escribir "Biemvenido a la tienda de POO" // SALIDA
+	SiNo
+		Escribir "No puedes ingresar a la tienda porque:" // SALIDA
+		Si edad <= 18 Entonces // tiene menos de 18 años
+			Escribir "* No cumples los requisitos de edad." // SALIDA
 		FinSi
-		Si saldo < 1 Entonces // SUBCASO VERDADERO
-			Escribir "* Saldo insuficiente." // Mostramos al usuario el incumplimiento
+		Si saldo < 1 Entonces // tiene menos de $1
+			Escribir "* Saldo insuficiente." // SALIDA
 		FinSi
 	FinSi
 FinSubProceso
