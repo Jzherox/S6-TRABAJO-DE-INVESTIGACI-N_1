@@ -557,9 +557,18 @@ FinSubProceso
 // Ejercicio 16: Categorizador de día de la semana
 // Pedir número del 1 al 7 y mostrar qué día es. Validar entrada.
 SubProceso Ejercicio_16
-	definir numeroo como entero
+	// 1. La lógica del programa requiere mostrar que dia se la semana corresponde segun el numero del 1 al 7.
+	// 2. Pedimos al usuario el valor de la variable que almacene el numero del dia.
+	// 3. Usamos una funcion que nos permita responder segun el valor.
+	// 4. Mostramos el resultado al usuario.
+	
+	// ENTRADA
+	definir numeroo como entero // Definimos la variable
+	numeroo = 0 // Inicializamos la variable
+	// Indicamos el requirimiento de informacion al usuario
 	Escribir "Ingrese un numero del 1 al 7:"; Leer numeroo   //Ingresamos el numero que nosotros necesitemos para buscar el dia 
-	segun numeroo hacer                       /La opcion segun es para solo poner un numero nos dirija a la respuesta ( solucion )
+	// PROCESO
+	segun numeroo hacer                       // La opcion segun es para solo poner un numero nos dirija a la respuesta ( solucion )
 		1: Escribir "El dia es lunes"    // Si ponemos 1 es lunes
 		2: Escribir "El dia es martes"   // Si ponemos 2 es Martes 
 		3: Escribir "El dia es miercoles" // Y asi susecivamente
