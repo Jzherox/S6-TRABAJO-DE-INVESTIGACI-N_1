@@ -558,18 +558,18 @@ FinSubProceso
 // Pedir número del 1 al 7 y mostrar qué día es. Validar entrada.
 SubProceso Ejercicio_16
 	definir numeroo como entero
-	Escribir "Ingrese un numero del 1 al 7:"; Leer numeroo
-	segun numeroo hacer
-		1: Escribir "El dia es lunes"
-		2: Escribir "El dia es martes"
-		3: Escribir "El dia es miercoles"
+	Escribir "Ingrese un numero del 1 al 7:"; Leer numeroo   //Ingresamos el numero que nosotros necesitemos para buscar el dia 
+	segun numeroo hacer                       /La opcion segun es para solo poner un numero nos dirija a la respuesta ( solucion )
+		1: Escribir "El dia es lunes"    // Si ponemos 1 es lunes
+		2: Escribir "El dia es martes"   // Si ponemos 2 es Martes 
+		3: Escribir "El dia es miercoles" // Y asi susecivamente
 		4: Escribir "El dia es jueves"
 		5: Escribir "El dia es viernes"
 		6: Escribir "El dia es sabado"
 		7: Escribir "El dia es domingo"
 		De Otro Modo:
-			Escribir "Numero invalido, debe ser del 1 al 7 "	 	
-	FinSegun
+			Escribir "Numero invalido, debe ser del 1 al 7 "	// Esto es lo que va a salir si precionamos un numero>7 porque no existe despues del 7
+	FinSegun                                                                
 FinSubProceso
 
 // Ejercicio 17: Clasificador de producto por precio unitario
