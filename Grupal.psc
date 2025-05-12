@@ -425,7 +425,11 @@ FinSubProceso
 // Ejercicio 12: Determinar si un número es positivo deberá presentar el doble del número, Si es negativo lo convierte a positivo y lo presenta. Si es cero presenta el número es neutro
 // Pedir un número y clasificar su signo.
 SubProceso Ejercicio_12
-	//ENTRADA
+	//la logica del problema requiere una variable para almacenar un numero
+        // Pedimos al usuario el valor de la variable " (numeroo)
+       //En este caso utilizamos condicionales con expresiones logicas
+       //Para determinar si un numero es positivo debera presentar
+      //ENTRADA
 	Definir numeroo, doble como entero
 	Escribir "Ingrese un numero" ; leer numeroo
 	//PROCESO Y SALIDA PORQUE HACEMOS LAS DOS COSAS AL MISMO TIEMPO 
